@@ -1,0 +1,679 @@
+{
+  "seed": 70230,
+  "n_calibration_mocks": {
+    "null": 1200,
+    "per_composite_cell": 240,
+    "causal_calibration_cells": 16,
+    "independent_causal_validation_cells": 16
+  },
+  "n_evaluation_mocks_per_injection": 400,
+  "power_target_for_classified_status": 0.8,
+  "power_definitions": {
+    "nonnull_detection_power": "probability of passing the non-null threshold",
+    "ST1_power": "probability of rejecting one-turnover compression for a predeclared resolved non-null injection",
+    "conditional_ST2_power": "probability of rejecting the constant-scale branch conditional on non-null, ST1-compatible entry",
+    "complete_pass_fraction": "probability of the final ST1/ST2-pass category after all preceding decisions"
+  },
+  "nuisance_rank": 12,
+  "flexible_rank": 12,
+  "contract": {
+    "n_k": 18,
+    "k_h_mpc": [
+      0.012,
+      0.14
+    ],
+    "lnk_window_width": 0.065,
+    "fractional_errors_P0_P2": [
+      0.002,
+      0.004
+    ],
+    "growth_integrator": {
+      "method": "RK4",
+      "base_steps_in_ln_a": 160,
+      "a_initial": 0.05,
+      "mandatory_breakpoints": "all output epochs and causal interval edges",
+      "edge_evaluation": "one-sided within each integration step"
+    },
+    "activation": {
+      "form": "0.5*(1+tanh((a-a_on)/delta_a))",
+      "a_on": 0.25,
+      "delta_a": 0.035
+    },
+    "one_turnover_bank": {
+      "beta_nodes": [
+        0.004,
+        0.012,
+        0.024,
+        0.04,
+        0.048,
+        0.064,
+        0.08,
+        0.1,
+        0.14,
+        0.18,
+        0.22
+      ],
+      "mass_nodes_h_mpc": [
+        0.04,
+        0.045,
+        0.055,
+        0.08,
+        0.105,
+        0.14,
+        0.175,
+        0.195,
+        0.22
+      ],
+      "power_nodes": [
+        0.5,
+        0.75,
+        1.0,
+        1.25,
+        1.5,
+        2.0
+      ]
+    },
+    "n_causal_node_histories": 128,
+    "causal_history_seed": 70231,
+    "causal_history_sampling": {
+      "beta": "independent uniform [0.004,0.10] per interval",
+      "q_h_mpc": "independent log-uniform [0.012,0.145] per interval",
+      "negative_amplitudes": false,
+      "interval_convention": "left-closed/right-open; final interval closed at a_max",
+      "smoothing_or_regularization": "none; piecewise constant on four causal intervals"
+    },
+    "n_k_basis": 6
+  },
+  "injections": {
+    "constant physical scale": {
+      "beta": 0.04,
+      "mass": 0.105,
+      "power": 1.0
+    },
+    "evolving scale": {
+      "beta": 0.08,
+      "mass": 0.105,
+      "power": 2.0
+    },
+    "resolved positive two-scale": {
+      "beta1": 0.1,
+      "mass1": 0.045,
+      "beta2": 0.1,
+      "mass2": 0.195
+    },
+    "compressed positive two-scale": {
+      "beta1": 0.02,
+      "mass1": 0.095,
+      "beta2": 0.02,
+      "mass2": 0.12
+    }
+  },
+  "thresholds": {
+    "nonnull_99": 26.543283956609308,
+    "st1_95": 36.279170974003485,
+    "st2_95": 5.587292863172837
+  },
+  "composite_coverage": {
+    "constant_ST2_false_rejection_range": [
+      0.0,
+      0.05
+    ],
+    "powerlaw_H1_ST1_false_rejection_range": [
+      0.0,
+      0.004166666666666667
+    ],
+    "causal_H1_ST1_calibration_false_rejection_range": [
+      0.0,
+      0.05
+    ],
+    "causal_H1_ST1_validation_false_rejection_range": [
+      0.0,
+      0.0625
+    ],
+    "grid_beta": [
+      0.012,
+      0.024,
+      0.04,
+      0.064
+    ],
+    "grid_mass": [
+      0.055,
+      0.105,
+      0.175
+    ],
+    "power_nodes_used_for_ST1_coverage": [
+      0.75,
+      1.0,
+      1.25
+    ],
+    "n_causal_histories_per_coverage_set": 16,
+    "causal_calibration_seed": 70233,
+    "causal_validation_seed": 70234,
+    "coverage_scope": "finite sampled power-law and piecewise-causal families; not uniform coverage of a continuous function space"
+  },
+  "classifications": {
+    "GR/null": {
+      "fractions": {
+        "deferred": 0.0,
+        "null": 0.99,
+        "ST1/ST2 pass": 0.01,
+        "ST2 fail": 0.0,
+        "ST1 fail": 0.0
+      },
+      "wilson_68_intervals": {
+        "null": [
+          0.9836612756786326,
+          0.9938948340470531
+        ],
+        "ST1/ST2 pass": [
+          0.006105165952946834,
+          0.01633872432136738
+        ],
+        "ST2 fail": [
+          0.0,
+          0.002493765586034913
+        ],
+        "ST1 fail": [
+          0.0,
+          0.002493765586034913
+        ]
+      }
+    },
+    "constant physical scale": {
+      "fractions": {
+        "deferred": 0.0,
+        "null": 0.0,
+        "ST1/ST2 pass": 0.9775,
+        "ST2 fail": 0.0225,
+        "ST1 fail": 0.0
+      },
+      "wilson_68_intervals": {
+        "null": [
+          0.0,
+          0.002493765586034913
+        ],
+        "ST1/ST2 pass": [
+          0.9688082138440425,
+          0.9838102400212944
+        ],
+        "ST2 fail": [
+          0.016189759978705722,
+          0.031191786155957624
+        ],
+        "ST1 fail": [
+          0.0,
+          0.002493765586034913
+        ]
+      }
+    },
+    "evolving scale ($q\\propto a^2$)": {
+      "fractions": {
+        "deferred": 0.0,
+        "null": 0.0,
+        "ST1/ST2 pass": 0.1525,
+        "ST2 fail": 0.8475,
+        "ST1 fail": 0.0
+      },
+      "wilson_68_intervals": {
+        "null": [
+          0.0,
+          0.002493765586034913
+        ],
+        "ST1/ST2 pass": [
+          0.13539286431017306,
+          0.1713403027721212
+        ],
+        "ST2 fail": [
+          0.8286596972278789,
+          0.8646071356898269
+        ],
+        "ST1 fail": [
+          0.0,
+          0.002493765586034913
+        ]
+      }
+    },
+    "resolved positive two-scale": {
+      "fractions": {
+        "deferred": 0.0,
+        "null": 0.0,
+        "ST1/ST2 pass": 0.0,
+        "ST2 fail": 0.01,
+        "ST1 fail": 0.99
+      },
+      "wilson_68_intervals": {
+        "null": [
+          0.0,
+          0.002493765586034913
+        ],
+        "ST1/ST2 pass": [
+          0.0,
+          0.002493765586034913
+        ],
+        "ST2 fail": [
+          0.006105165952946834,
+          0.01633872432136738
+        ],
+        "ST1 fail": [
+          0.9836612756786326,
+          0.9938948340470531
+        ]
+      }
+    },
+    "compressed positive two-scale": {
+      "fractions": {
+        "deferred": 0.0,
+        "null": 0.0,
+        "ST1/ST2 pass": 0.975,
+        "ST2 fail": 0.025,
+        "ST1 fail": 0.0
+      },
+      "wilson_68_intervals": {
+        "null": [
+          0.0,
+          0.002493765586034913
+        ],
+        "ST1/ST2 pass": [
+          0.9659294821442185,
+          0.9817014405490484
+        ],
+        "ST2 fail": [
+          0.018298559450951678,
+          0.034070517855781496
+        ],
+        "ST1 fail": [
+          0.0,
+          0.002493765586034913
+        ]
+      }
+    }
+  },
+  "noise_operating_characteristics": [
+    {
+      "noise_multiplier": 1.0,
+      "raw_fractions": {
+        "null": 0.0,
+        "ST1/ST2 pass": 0.9958333333333333,
+        "ST2 fail": 0.004166666666666667,
+        "ST1 fail": 0.0
+      },
+      "detection_power": 1.0,
+      "operational_fractions": {
+        "deferred": 0.0,
+        "null": 0.0,
+        "ST1/ST2 pass": 0.9916666666666667,
+        "ST2 fail": 0.008333333333333333,
+        "ST1 fail": 0.0
+      },
+      "status": "classified"
+    },
+    {
+      "noise_multiplier": 2.0,
+      "raw_fractions": {
+        "null": 0.0,
+        "ST1/ST2 pass": 0.9791666666666666,
+        "ST2 fail": 0.0125,
+        "ST1 fail": 0.008333333333333333
+      },
+      "detection_power": 1.0,
+      "operational_fractions": {
+        "deferred": 0.0,
+        "null": 0.004166666666666667,
+        "ST1/ST2 pass": 0.9708333333333333,
+        "ST2 fail": 0.025,
+        "ST1 fail": 0.0
+      },
+      "status": "classified"
+    },
+    {
+      "noise_multiplier": 4.0,
+      "raw_fractions": {
+        "null": 0.675,
+        "ST1/ST2 pass": 0.3,
+        "ST2 fail": 0.008333333333333333,
+        "ST1 fail": 0.016666666666666666
+      },
+      "detection_power": 0.32499999999999996,
+      "operational_fractions": {
+        "deferred": 1.0,
+        "null": 0.0,
+        "ST1/ST2 pass": 0.0,
+        "ST2 fail": 0.0,
+        "ST1 fail": 0.0
+      },
+      "status": "deferred"
+    }
+  ],
+  "epsilon_ST2_power": [
+    {
+      "epsilon": -0.25,
+      "raw_fractions": {
+        "null": 0.0,
+        "ST1/ST2 pass": 0.8944444444444445,
+        "ST2 fail": 0.10555555555555556,
+        "ST1 fail": 0.0
+      },
+      "ST2_conditional_power": 0.10555555555555556,
+      "status": "deferred"
+    },
+    {
+      "epsilon": -0.1,
+      "raw_fractions": {
+        "null": 0.0,
+        "ST1/ST2 pass": 0.8111111111111111,
+        "ST2 fail": 0.18888888888888888,
+        "ST1 fail": 0.0
+      },
+      "ST2_conditional_power": 0.18888888888888888,
+      "status": "deferred"
+    },
+    {
+      "epsilon": 0.0,
+      "raw_fractions": {
+        "null": 0.0,
+        "ST1/ST2 pass": 0.9805555555555555,
+        "ST2 fail": 0.019444444444444445,
+        "ST1 fail": 0.0
+      },
+      "ST2_conditional_power": 0.019444444444444445,
+      "status": "deferred"
+    },
+    {
+      "epsilon": 0.1,
+      "raw_fractions": {
+        "null": 0.0,
+        "ST1/ST2 pass": 0.7888888888888889,
+        "ST2 fail": 0.2111111111111111,
+        "ST1 fail": 0.0
+      },
+      "ST2_conditional_power": 0.2111111111111111,
+      "status": "deferred"
+    },
+    {
+      "epsilon": 0.25,
+      "raw_fractions": {
+        "null": 0.0,
+        "ST1/ST2 pass": 0.8833333333333333,
+        "ST2 fail": 0.11666666666666667,
+        "ST1 fail": 0.0
+      },
+      "ST2_conditional_power": 0.11666666666666667,
+      "status": "deferred"
+    },
+    {
+      "epsilon": 0.5,
+      "raw_fractions": {
+        "null": 0.0,
+        "ST1/ST2 pass": 0.08611111111111111,
+        "ST2 fail": 0.9138888888888889,
+        "ST1 fail": 0.0
+      },
+      "ST2_conditional_power": 0.9138888888888889,
+      "status": "classified"
+    },
+    {
+      "epsilon": 1.0,
+      "raw_fractions": {
+        "null": 0.0,
+        "ST1/ST2 pass": 0.1527777777777778,
+        "ST2 fail": 0.8472222222222222,
+        "ST1 fail": 0.0
+      },
+      "ST2_conditional_power": 0.8472222222222222,
+      "status": "classified"
+    }
+  ],
+  "finite_bank_convergence": [
+    {
+      "n_causal": 64,
+      "seed": 70231,
+      "n_k_basis": 5,
+      "flexible_rank": 10,
+      "thresholds": {
+        "nonnull_99": 22.965395540563687,
+        "st1_95": 40.454863971289576,
+        "st2_95": 4.848903206586334
+      },
+      "positive_two_scale_ST1_fail": 0.9541666666666667,
+      "constant_pass": 0.9833333333333333,
+      "coverage": {
+        "constant_ST2_false_rejection_range": [
+          0.008333333333333333,
+          0.05
+        ],
+        "powerlaw_H1_ST1_false_rejection_range": [
+          0.0,
+          0.0
+        ],
+        "causal_H1_ST1_calibration_false_rejection_range": [
+          0.0,
+          0.05
+        ],
+        "causal_H1_ST1_validation_false_rejection_range": [
+          0.0,
+          0.05
+        ],
+        "grid_beta": [
+          0.012,
+          0.024,
+          0.04,
+          0.064
+        ],
+        "grid_mass": [
+          0.055,
+          0.105,
+          0.175
+        ],
+        "power_nodes_used_for_ST1_coverage": [
+          0.75,
+          1.0,
+          1.25
+        ],
+        "n_causal_histories_per_coverage_set": 16,
+        "causal_calibration_seed": 70233,
+        "causal_validation_seed": 70234,
+        "coverage_scope": "finite sampled power-law and piecewise-causal families; not uniform coverage of a continuous function space"
+      }
+    },
+    {
+      "n_causal": 128,
+      "seed": 70231,
+      "n_k_basis": 6,
+      "flexible_rank": 12,
+      "thresholds": {
+        "nonnull_99": 26.700963389112854,
+        "st1_95": 36.264701738282675,
+        "st2_95": 5.359540033005146
+      },
+      "positive_two_scale_ST1_fail": 0.9958333333333333,
+      "constant_pass": 0.975,
+      "coverage": {
+        "constant_ST2_false_rejection_range": [
+          0.0,
+          0.05
+        ],
+        "powerlaw_H1_ST1_false_rejection_range": [
+          0.0,
+          0.0
+        ],
+        "causal_H1_ST1_calibration_false_rejection_range": [
+          0.0,
+          0.05
+        ],
+        "causal_H1_ST1_validation_false_rejection_range": [
+          0.0,
+          0.05
+        ],
+        "grid_beta": [
+          0.012,
+          0.024,
+          0.04,
+          0.064
+        ],
+        "grid_mass": [
+          0.055,
+          0.105,
+          0.175
+        ],
+        "power_nodes_used_for_ST1_coverage": [
+          0.75,
+          1.0,
+          1.25
+        ],
+        "n_causal_histories_per_coverage_set": 16,
+        "causal_calibration_seed": 70233,
+        "causal_validation_seed": 70234,
+        "coverage_scope": "finite sampled power-law and piecewise-causal families; not uniform coverage of a continuous function space"
+      }
+    },
+    {
+      "n_causal": 192,
+      "seed": 70231,
+      "n_k_basis": 7,
+      "flexible_rank": 14,
+      "thresholds": {
+        "nonnull_99": 29.253179337063255,
+        "st1_95": 32.486560659033266,
+        "st2_95": 5.523696603384126
+      },
+      "positive_two_scale_ST1_fail": 0.9916666666666667,
+      "constant_pass": 0.9791666666666666,
+      "coverage": {
+        "constant_ST2_false_rejection_range": [
+          0.0,
+          0.05
+        ],
+        "powerlaw_H1_ST1_false_rejection_range": [
+          0.0,
+          0.008333333333333333
+        ],
+        "causal_H1_ST1_calibration_false_rejection_range": [
+          0.0,
+          0.05
+        ],
+        "causal_H1_ST1_validation_false_rejection_range": [
+          0.0,
+          0.05
+        ],
+        "grid_beta": [
+          0.012,
+          0.024,
+          0.04,
+          0.064
+        ],
+        "grid_mass": [
+          0.055,
+          0.105,
+          0.175
+        ],
+        "power_nodes_used_for_ST1_coverage": [
+          0.75,
+          1.0,
+          1.25
+        ],
+        "n_causal_histories_per_coverage_set": 16,
+        "causal_calibration_seed": 70233,
+        "causal_validation_seed": 70234,
+        "coverage_scope": "finite sampled power-law and piecewise-causal families; not uniform coverage of a continuous function space"
+      }
+    },
+    {
+      "n_causal": 128,
+      "seed": 70232,
+      "n_k_basis": 6,
+      "flexible_rank": 12,
+      "thresholds": {
+        "nonnull_99": 26.700963389112854,
+        "st1_95": 36.83346931713264,
+        "st2_95": 6.297569228698385
+      },
+      "positive_two_scale_ST1_fail": 0.9833333333333333,
+      "constant_pass": 0.9875,
+      "coverage": {
+        "constant_ST2_false_rejection_range": [
+          0.0,
+          0.05
+        ],
+        "powerlaw_H1_ST1_false_rejection_range": [
+          0.0,
+          0.0
+        ],
+        "causal_H1_ST1_calibration_false_rejection_range": [
+          0.0,
+          0.05
+        ],
+        "causal_H1_ST1_validation_false_rejection_range": [
+          0.0,
+          0.041666666666666664
+        ],
+        "grid_beta": [
+          0.012,
+          0.024,
+          0.04,
+          0.064
+        ],
+        "grid_mass": [
+          0.055,
+          0.105,
+          0.175
+        ],
+        "power_nodes_used_for_ST1_coverage": [
+          0.75,
+          1.0,
+          1.25
+        ],
+        "n_causal_histories_per_coverage_set": 16,
+        "causal_calibration_seed": 70233,
+        "causal_validation_seed": 70234,
+        "coverage_scope": "finite sampled power-law and piecewise-causal families; not uniform coverage of a continuous function space"
+      }
+    }
+  ],
+  "time_step_convergence": {
+    "base_steps_tested": [
+      80,
+      160,
+      320
+    ],
+    "reference_base_steps": 320,
+    "mandatory_breakpoints": "all output epochs and causal interval edges",
+    "models": {
+      "constant_scale": {
+        "80": {
+          "max_absolute_response_difference_vs_320": 8.529026374048954e-10,
+          "max_difference_over_reference_peak_vs_320": 1.806595430685302e-08
+        },
+        "160": {
+          "max_absolute_response_difference_vs_320": 7.741007834738411e-11,
+          "max_difference_over_reference_peak_vs_320": 1.6396794627917831e-09
+        }
+      },
+      "evolving_scale": {
+        "80": {
+          "max_absolute_response_difference_vs_320": 2.136540500075057e-09,
+          "max_difference_over_reference_peak_vs_320": 2.0585125467588057e-08
+        },
+        "160": {
+          "max_absolute_response_difference_vs_320": 1.8699153336854124e-10,
+          "max_difference_over_reference_peak_vs_320": 1.8016247179179967e-09
+        }
+      },
+      "piecewise_causal": {
+        "80": {
+          "max_absolute_response_difference_vs_320": 9.623006835823844e-10,
+          "max_difference_over_reference_peak_vs_320": 2.4868377358828854e-08
+        },
+        "160": {
+          "max_absolute_response_difference_vs_320": 7.516720579303637e-11,
+          "max_difference_over_reference_peak_vs_320": 1.9425180409423887e-09
+        }
+      }
+    }
+  },
+  "response_cosines": {
+    "mass_vs_neutrino_like": -0.7214518696854751,
+    "amplitude_vs_neutrino_like": 0.9946456112531916,
+    "note": "neutrino-like semi-numerical kernel; not a Boltzmann derivative"
+  },
+  "scope": "indicative semi-numerical benchmark; not a survey forecast or Boltzmann validation"
+}

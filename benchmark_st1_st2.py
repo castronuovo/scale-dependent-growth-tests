@@ -10,12 +10,16 @@ The finite bank is an operational approximation to the stated hypotheses.
 
 from __future__ import annotations
 
+import argparse
+import hashlib
 import json
+import re
 import zlib
 import warnings
 from copy import copy
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -39,6 +43,7 @@ CAUSAL_CALIBRATION_SEED = 70233
 CAUSAL_VALIDATION_SEED = 70234
 N_CAUSAL_COVERAGE_CELLS = 16
 POWER_TARGET = 0.80
+SCRIPT_VERSION = "1.0.2"
 
 
 @dataclass(frozen=True)
@@ -54,6 +59,24 @@ class Contract:
     causal_seed: int = 70231
     n_k_basis: int = 6
     n_time_steps: int = 160
+
+    def __post_init__(self):
+        if self.n_k < 3:
+            raise ValueError("n_k must be at least 3")
+        if not 0.0 < self.kmin < self.kmax:
+            raise ValueError("require 0 < kmin < kmax")
+        if self.lnk_window_width <= 0.0:
+            raise ValueError("lnk_window_width must be positive")
+        if self.noise_scale <= 0.0:
+            raise ValueError("noise_scale must be positive")
+        if self.n_causal < 1 or self.n_k_basis < 2 or self.n_time_steps < 2:
+            raise ValueError("bank, basis, and integration sizes must be positive")
+
+
+def require_finite(name: str, value: np.ndarray | float) -> None:
+    """Fail fast when a numerical stage produces NaN or infinity."""
+    if not np.all(np.isfinite(value)):
+        raise FloatingPointError(f"non-finite values in {name}")
 
 
 def seeded(label: str) -> np.random.Generator:
@@ -74,6 +97,10 @@ def primordial_shape(k: np.ndarray) -> np.ndarray:
 
 
 def hat_basis(x: np.ndarray, nodes: np.ndarray) -> np.ndarray:
+    if x.ndim != 1 or nodes.ndim != 1 or nodes.size < 2:
+        raise ValueError("hat_basis requires one-dimensional inputs and at least two nodes")
+    if np.any(np.diff(nodes) <= 0.0):
+        raise ValueError("hat-basis nodes must be strictly increasing")
     out = np.zeros((nodes.size, x.size))
     for i, node in enumerate(nodes):
         if i == 0:
@@ -84,7 +111,9 @@ def hat_basis(x: np.ndarray, nodes: np.ndarray) -> np.ndarray:
             left = np.clip((x - nodes[i - 1]) / (node - nodes[i - 1]), 0.0, 1.0)
             right = np.clip((nodes[i + 1] - x) / (nodes[i + 1] - node), 0.0, 1.0)
             out[i] = np.minimum(left, right)
-    return out / np.where(out.sum(axis=0) > 0.0, out.sum(axis=0), 1.0)
+    result = out / np.where(out.sum(axis=0) > 0.0, out.sum(axis=0), 1.0)
+    require_finite("hat basis", result)
+    return result
 
 
 class Benchmark:
@@ -94,14 +123,23 @@ class Benchmark:
         x = np.log(self.k)
         w = np.exp(-0.5 * ((x[:, None] - x[None, :]) / contract.lnk_window_width) ** 2)
         self.window = w / w.sum(axis=1, keepdims=True)
+        require_finite("window matrix", self.window)
+        if not np.allclose(self.window.sum(axis=1), 1.0, rtol=0.0, atol=1.0e-13):
+            raise RuntimeError("window rows are not normalized")
         self.k_basis = hat_basis(x, np.linspace(x.min(), x.max(), contract.n_k_basis))
         self.time_edges = np.sqrt(A_OBS[:-1] * A_OBS[1:])
         self.gr_d, self.gr_f = self.integrate(lambda k, a: np.ones_like(k))
         self.gr_multipoles = self.multipoles(self.gr_d, self.gr_f)
         self.covariance, nuisance = self.covariance_and_nuisance()
+        require_finite("covariance", self.covariance)
+        if not np.allclose(self.covariance, self.covariance.T, rtol=0.0, atol=1.0e-15):
+            raise RuntimeError("covariance is not symmetric")
         self.chol = np.linalg.cholesky(self.covariance)
         self.whitener = np.linalg.inv(self.chol)
+        require_finite("whitener", self.whitener)
         uw, sw, _ = np.linalg.svd(self.whitener @ nuisance, full_matrices=False)
+        if sw.size == 0 or sw[0] <= 0.0:
+            raise RuntimeError("nuisance design has no resolved direction")
         self.nuisance_rank = int(np.sum(sw > sw[0] * 1.0e-10))
         self.q_nuisance = uw[:, : self.nuisance_rank]
         self.prepare_flexible()
@@ -143,17 +181,25 @@ class Benchmark:
                 d_out[itarget], f_out[itarget] = dt, vt / dt
                 itarget += 1
             d, v = dn, vn
+        if itarget != targets.size:
+            raise RuntimeError("growth integration did not reach every output epoch")
+        require_finite("growth factor", d_out)
+        require_finite("growth rate", f_out)
         return d_out, f_out
 
     def multipoles(self, d, f, bias=B_FID):
         pm = primordial_shape(self.k)[None, :] * d**2
         p0 = (bias[:,None]**2 + 2*bias[:,None]*f/3 + f**2/5) * pm
         p2 = (4*bias[:,None]*f/3 + 4*f**2/7) * pm
-        return np.stack([p0 @ self.window.T, p2 @ self.window.T], axis=1)
+        result = np.stack([p0 @ self.window.T, p2 @ self.window.T], axis=1)
+        require_finite("Kaiser multipoles", result)
+        return result
 
     def vector(self, mu):
         d, f = self.integrate(mu)
-        return (self.multipoles(d, f) / self.gr_multipoles - 1.0).reshape(-1)
+        result = (self.multipoles(d, f) / self.gr_multipoles - 1.0).reshape(-1)
+        require_finite("projected response vector", result)
+        return result
 
     def one(self, beta, mass, power=1.0):
         return self.vector(lambda k, a: 1 + activation(a)*beta*k**2/(k**2+(mass*a**power)**2))
@@ -168,6 +214,15 @@ class Benchmark:
             beta1*k**2/(k**2+(mass1*a)**2) + beta2*k**2/(k**2+(mass2*a)**2)))
 
     def history_mu(self, beta_nodes, q_nodes):
+        beta_nodes = np.asarray(beta_nodes, dtype=float)
+        q_nodes = np.asarray(q_nodes, dtype=float)
+        if beta_nodes.shape != A_OBS.shape or q_nodes.shape != A_OBS.shape:
+            raise ValueError("causal histories require one beta and q value per time interval")
+        if np.any(q_nodes <= 0.0):
+            raise ValueError("causal turnover positions must be positive")
+        require_finite("causal beta nodes", beta_nodes)
+        require_finite("causal q nodes", q_nodes)
+
         def mu(k, a):
             j = int(np.searchsorted(self.time_edges, a, side="right"))
             return 1 + activation(a)*beta_nodes[j]*k**2/(k**2+q_nodes[j]**2)
@@ -239,6 +294,8 @@ class Benchmark:
         self.one_bank = np.asarray([self.project(v) for v in one])
         self.const_quad = np.einsum("ij,ij->i",self.const_bank,self.const_bank)
         self.one_quad = np.einsum("ij,ij->i",self.one_bank,self.one_bank)
+        require_finite("constant-scale bank", self.const_bank)
+        require_finite("one-turnover bank", self.one_bank)
 
     def causal_signals(self, seed, n_signals):
         """Draw fixed causal histories independently of the finite fitting bank."""
@@ -252,7 +309,10 @@ class Benchmark:
 
     @staticmethod
     def best(y, bank, quad):
+        if bank.ndim != 2 or y.ndim != 1 or bank.shape[1] != y.size:
+            raise ValueError("bank and data-vector dimensions are inconsistent")
         values = y@y - 2*(bank@y) + quad
+        require_finite("profiled bank distances", values)
         return float(values.min())
 
     def stat(self, vector):
@@ -265,11 +325,19 @@ class Benchmark:
         return {"nonnull":chi0-chif, "st1":chione-chif, "st2":chiconst-chione}
 
     def sample_stats(self, signal, n, label):
+        if n < 1:
+            raise ValueError("the number of mocks must be positive")
+        signal = np.asarray(signal, dtype=float)
+        if signal.shape != (self.chol.shape[0],):
+            raise ValueError("signal has the wrong projected-data dimension")
+        require_finite("mock signal", signal)
         rng = seeded(label)
         return [self.stat(signal + self.chol@rng.standard_normal(self.chol.shape[0])) for _ in range(n)]
 
     def calibrate(self, n_null=1200, n_cell=240,
                   n_causal_cells=N_CAUSAL_COVERAGE_CELLS):
+        if min(n_null, n_cell, n_causal_cells) < 1:
+            raise ValueError("all calibration sample counts must be positive")
         # Composite calibration: each quoted threshold is the worst cell quantile.
         # Causal calibration histories are independent of the finite fitting bank;
         # a second seed supplies an out-of-calibration validation set.
@@ -326,8 +394,11 @@ class Benchmark:
 
     def evaluate(self, signal, threshold, n, label):
         stats = self.sample_stats(signal,n,label)
-        return {key:float(np.mean([self.raw_class(s,threshold)==key for s in stats]))
-                for key in ("null","ST1/ST2 pass","ST2 fail","ST1 fail")}
+        fractions = {key:float(np.mean([self.raw_class(s,threshold)==key for s in stats]))
+                     for key in ("null","ST1/ST2 pass","ST2 fail","ST1 fail")}
+        if not np.isclose(sum(fractions.values()), 1.0, rtol=0.0, atol=1.0e-12):
+            raise RuntimeError("classification fractions do not sum to unity")
+        return fractions
 
     def response_cosines(self):
         base = self.one(.040,.105,1.)
@@ -433,7 +504,103 @@ def classify_with_deferred(benchmark, signal, threshold, n, label, criterion):
     return {"deferred":0.0, **raw}, raw
 
 
-def main():
+def validate_output(output: dict[str, Any]) -> None:
+    """Validate the deterministic result schema and probability invariants."""
+    required = {
+        "seed", "n_calibration_mocks", "n_evaluation_mocks_per_injection",
+        "thresholds", "classifications", "noise_operating_characteristics",
+        "epsilon_ST2_power", "finite_bank_convergence",
+        "time_step_convergence", "response_cosines", "scope",
+    }
+    missing = sorted(required.difference(output))
+    if missing:
+        raise ValueError(f"result is missing required keys: {missing}")
+
+    def check_finite_json(value: Any, path: str = "output") -> None:
+        if isinstance(value, dict):
+            for key, item in value.items():
+                check_finite_json(item, f"{path}.{key}")
+        elif isinstance(value, (list, tuple)):
+            for index, item in enumerate(value):
+                check_finite_json(item, f"{path}[{index}]")
+        elif isinstance(value, (float, np.floating)) and not np.isfinite(value):
+            raise FloatingPointError(f"non-finite JSON value at {path}")
+
+    check_finite_json(output)
+    for name, value in output["thresholds"].items():
+        if not np.isfinite(value):
+            raise FloatingPointError(f"non-finite threshold {name}")
+    for name, row in output["classifications"].items():
+        fractions = row["fractions"]
+        if any(not 0.0 <= value <= 1.0 for value in fractions.values()):
+            raise ValueError(f"invalid classification fraction for {name}")
+        if not np.isclose(sum(fractions.values()), 1.0, rtol=0.0, atol=1.0e-12):
+            raise ValueError(f"classification fractions for {name} do not sum to unity")
+        for category, interval in row["wilson_68_intervals"].items():
+            if len(interval) != 2 or not 0.0 <= interval[0] <= interval[1] <= 1.0:
+                raise ValueError(f"invalid Wilson interval for {name}: {category}")
+    json.dumps(output, allow_nan=False)
+
+
+def write_json_atomic(path: Path, output: dict[str, Any]) -> None:
+    """Replace the result file only after a complete strict JSON serialization."""
+    payload = json.dumps(output, indent=2, allow_nan=False) + "\n"
+    temporary = path.with_name(f".{path.name}.tmp")
+    temporary.write_text(payload, encoding="utf-8")
+    temporary.replace(path)
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def read_hash_manifest(readme: Path = ROOT / "README.md") -> dict[str, str]:
+    """Read the SHA-256 block already published in the reproducibility README."""
+    pattern = re.compile(r"^([0-9a-f]{64})  (.+)$")
+    manifest = {}
+    for line in readme.read_text(encoding="utf-8").splitlines():
+        match = pattern.match(line.strip())
+        if match:
+            manifest[match.group(2)] = match.group(1)
+    if not manifest:
+        raise ValueError(f"no SHA-256 manifest found in {readme}")
+    return manifest
+
+
+def verify_existing_artifacts() -> dict[str, Any]:
+    """Check the stored JSON schema and every artifact hash declared in README."""
+    output = json.loads(RESULTS.read_text(encoding="utf-8"))
+    validate_output(output)
+    manifest = read_hash_manifest()
+    actual = {}
+    mismatches = {}
+    root = ROOT.resolve()
+    for relative, expected in manifest.items():
+        path = (ROOT / relative).resolve()
+        if not path.is_relative_to(root):
+            raise ValueError(f"manifest path escapes the repository directory: {relative}")
+        if not path.is_file():
+            mismatches[relative] = {"expected": expected, "actual": "missing"}
+            continue
+        actual[relative] = sha256_file(path)
+        if actual[relative] != expected:
+            mismatches[relative] = {"expected": expected, "actual": actual[relative]}
+    if mismatches:
+        raise RuntimeError(f"artifact verification failed: {mismatches}")
+    return {
+        "status": "verified",
+        "script_version": SCRIPT_VERSION,
+        "json_schema": "valid",
+        "artifacts": actual,
+    }
+
+
+def run_benchmark():
+    """Execute the fixed publication contract and return its deterministic output."""
     b = Benchmark(Contract())
     threshold, coverage = b.calibrate()
     off_template = b.exponential(.040,.105,1.)
@@ -516,10 +683,8 @@ def main():
             "time_step_convergence":b.time_step_convergence(),
             "response_cosines":b.response_cosines(),
             "scope":"indicative semi-numerical benchmark; not a survey forecast or Boltzmann validation"}
-    RESULTS.write_text(json.dumps(output,indent=2)+"\n",encoding="utf-8")
-    plot_classification(output, italian=False); plot_classification(output, italian=True)
-    plot_diagnostics(output, italian=False); plot_diagnostics(output, italian=True)
-    print(json.dumps(output,indent=2))
+    validate_output(output)
+    return output
 
 
 def plot_classification(output, italian=False):
@@ -560,6 +725,48 @@ def plot_diagnostics(output, italian=False):
     for ax in axs: ax.grid(alpha=.25)
     fig.tight_layout(); path=DIAG_ITA if italian else DIAG; path.parent.mkdir(parents=True,exist_ok=True)
     fig.savefig(path,dpi=300,bbox_inches="tight",facecolor="white"); plt.close(fig)
+
+
+def parse_args(argv=None):
+    parser = argparse.ArgumentParser(
+        description=(
+            "Reproduce or verify the fixed ST1--ST2 semi-numerical benchmark. "
+            "The default run preserves the publication contract."
+        )
+    )
+    parser.add_argument(
+        "--verify-existing", action="store_true",
+        help="validate the stored JSON and all SHA-256 hashes without rerunning mocks",
+    )
+    parser.add_argument(
+        "--no-plots", action="store_true",
+        help="run the full benchmark and write JSON without regenerating figures",
+    )
+    parser.add_argument(
+        "--quiet", action="store_true",
+        help="suppress the JSON result on standard output",
+    )
+    parser.add_argument("--version", action="version", version=f"%(prog)s {SCRIPT_VERSION}")
+    return parser.parse_args(argv)
+
+
+def main(argv=None):
+    args = parse_args(argv)
+    if args.verify_existing:
+        verification = verify_existing_artifacts()
+        if not args.quiet:
+            print(json.dumps(verification, indent=2, sort_keys=True))
+        return
+
+    output = run_benchmark()
+    write_json_atomic(RESULTS, output)
+    if not args.no_plots:
+        plot_classification(output, italian=False)
+        plot_classification(output, italian=True)
+        plot_diagnostics(output, italian=False)
+        plot_diagnostics(output, italian=True)
+    if not args.quiet:
+        print(json.dumps(output, indent=2, allow_nan=False))
 
 
 if __name__ == "__main__":

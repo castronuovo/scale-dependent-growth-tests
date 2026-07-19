@@ -158,6 +158,11 @@ class Benchmark:
     def one(self, beta, mass, power=1.0):
         return self.vector(lambda k, a: 1 + activation(a)*beta*k**2/(k**2+(mass*a**power)**2))
 
+    def exponential(self, beta, mass, power=1.0):
+        """Smooth monotonic one-scale stress test outside the rational fit family."""
+        return self.vector(lambda k, a: 1 + activation(a)*beta*(
+            1.0-np.exp(-(k/(mass*a**power))**2)))
+
     def two(self, beta1, mass1, beta2, mass2):
         return self.vector(lambda k, a: 1 + activation(a) * (
             beta1*k**2/(k**2+(mass1*a)**2) + beta2*k**2/(k**2+(mass2*a)**2)))
@@ -358,6 +363,8 @@ class Benchmark:
         histories = {
             "constant_scale": lambda k, a: 1 + activation(a)*.040*k**2/(k**2+(.105*a)**2),
             "evolving_scale": lambda k, a: 1 + activation(a)*.080*k**2/(k**2+(.105*a**2)**2),
+            "nonrational_exponential": lambda k, a: 1 + activation(a)*.040*(
+                1.0-np.exp(-(k/(.105*a))**2)),
             "piecewise_causal": self.history_mu(
                 np.array([.020, .060, .030, .080]),
                 np.array([.025, .090, .045, .130])),
@@ -429,10 +436,12 @@ def classify_with_deferred(benchmark, signal, threshold, n, label, criterion):
 def main():
     b = Benchmark(Contract())
     threshold, coverage = b.calibrate()
+    off_template = b.exponential(.040,.105,1.)
     injections = {
         "GR/null": np.zeros(b.chol.shape[0]),
         "constant physical scale": b.one(.040,.105,1.),
         "evolving scale ($q\\propto a^2$)": b.one(.080,.105,2.),
+        "non-rational one-scale transition": off_template,
         # Positive spectral weights, both turnover scales inside the declared k window.
         "resolved positive two-scale": b.two(.100,.045,.100,.195),
         "compressed positive two-scale": b.two(.020,.095,.020,.120),
@@ -488,9 +497,20 @@ def main():
             "nuisance_rank":b.nuisance_rank,"flexible_rank":b.flexible_rank,"contract":short_contract(b.c),
             "injections":{"constant physical scale":{"beta":.040,"mass":.105,"power":1.},
                           "evolving scale":{"beta":.080,"mass":.105,"power":2.},
+                          "non-rational one-scale transition":{
+                              "form":"beta*[1-exp(-(k/q(a))^2)]",
+                              "beta":.040,"mass":.105,"power":1.,
+                              "q(a)":"mass*a^power",
+                              "role":"held-out phenomenological off-template validation",
+                              "included_in_threshold_calibration":False,
+                              "microscopic_attribution":"none"},
                           "resolved positive two-scale":{"beta1":.100,"mass1":.045,"beta2":.100,"mass2":.195},
                           "compressed positive two-scale":{"beta1":.020,"mass1":.095,"beta2":.020,"mass2":.120}},
             "thresholds":threshold,"composite_coverage":coverage,"classifications":classifications,
+            "off_template_validation":{
+                "injection":"non-rational one-scale transition",
+                "included_in_threshold_calibration":False,
+                "noise_free_statistics":b.stat(off_template)},
             "noise_operating_characteristics":noise_rows,"epsilon_ST2_power":epsilon_rows,
             "finite_bank_convergence":convergence,
             "time_step_convergence":b.time_step_convergence(),
@@ -507,12 +527,16 @@ def plot_classification(output, italian=False):
     cats=["null","deferred","ST1/ST2 pass","ST2 fail","ST1 fail"]
     colors=["#6c757d","#8e7cc3","#0f8b7e","#c46a00","#bd1e24"]
     display=(["nullo","rinviato","supera ST1/ST2","fallisce ST2","fallisce ST1"] if italian else cats)
-    bottom=np.zeros(len(labels)); fig,ax=plt.subplots(figsize=(9.1,4.8))
+    bottom=np.zeros(len(labels)); fig,ax=plt.subplots(figsize=(10.5,4.8))
     for cat,color,name in zip(cats,colors,display):
         vals=np.array([rows[x]["fractions"].get(cat,0.) for x in labels])
         ax.bar(range(len(labels)),vals,bottom=bottom,color=color,label=name); bottom+=vals
-    xlabels=(["GR/nullo","scala fisica\ncostante","scala evolutiva","due scale\npositive risolte","due scale\npositive compresse"] if italian else
-             ["GR/null","constant\nphysical scale","evolving\nscale","resolved positive\ntwo-scale","compressed positive\ntwo-scale"])
+    xlabels=(["GR/nullo","scala fisica\ncostante","scala evolutiva",
+              "transizione non razionale\na scala singola","due scale\npositive risolte",
+              "due scale\npositive compresse"] if italian else
+             ["GR/null","constant\nphysical scale","evolving\nscale",
+              "non-rational one-scale\ntransition","resolved positive\ntwo-scale",
+              "compressed positive\ntwo-scale"])
     ax.set_xticks(range(len(labels)),xlabels); ax.set_ylim(0,1); ax.grid(axis="y",alpha=.25)
     ax.set_ylabel("Frazione di classificazione recuperata" if italian else "Recovered classification fraction")
     ax.legend(frameon=False,ncol=3,loc="upper center",bbox_to_anchor=(.5,1.23)); fig.tight_layout()

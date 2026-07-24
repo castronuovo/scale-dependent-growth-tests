@@ -80,15 +80,15 @@ convergence check for representative constant-scale, evolving-scale,
 non-rational, and discontinuous causal histories.
 
 The frozen reproducibility target is
-[GitHub release v1.0.2](https://github.com/castronuovo/scale-dependent-growth-tests/releases/tag/v1.0.2),
-rather than the moving `main` branch. This backward-compatible release adds
-validation and verification features while reproducing the v1.0.1 JSON byte
-for byte and leaving all four figure hashes unchanged.
+[GitHub release v1.0.3](https://github.com/castronuovo/scale-dependent-growth-tests/releases/tag/v1.0.3),
+rather than the moving `main` branch. This release synchronizes the stored
+machine-readable results and benchmark figures with the held-out non-rational
+one-scale validation and the published SHA-256 manifest.
 
 ## Expected SHA-256 hashes
 
 ```text
-ada0e00afc467975e3e2f8eb1aa8cb13d1b103d5676443269346d723f8ff92a1  benchmark_st1_st2.py
+8dd1363cc468d6198208c58e4bbf0d6f7c19d976087b708e7cf5c8459da7d9e9  benchmark_st1_st2.py
 0e0569687e1c91ffbc838abba2ff968e03ab4bebb2f7860500be024e3b4483b7  benchmark_st1_st2_results.json
 3fec6b9992caa9cec43f881c54e0b20d31031c06bd07c9a5d56a6c71a6568fbf  figs/st1_st2_end_to_end_benchmark.png
 a716ca7c8be47fff7444af229c3e55f2aa2d74ac37b1a0e3ccbb54d27cc5e7ae  figs/st1_st2_operating_diagnostics.png

@@ -95,6 +95,16 @@
       "mass": 0.105,
       "power": 2.0
     },
+    "non-rational one-scale transition": {
+      "form": "beta*[1-exp(-(k/q(a))^2)]",
+      "beta": 0.04,
+      "mass": 0.105,
+      "power": 1.0,
+      "q(a)": "mass*a^power",
+      "role": "held-out phenomenological off-template validation",
+      "included_in_threshold_calibration": false,
+      "microscopic_attribution": "none"
+    },
     "resolved positive two-scale": {
       "beta1": 0.1,
       "mass1": 0.045,
@@ -233,6 +243,33 @@
         ]
       }
     },
+    "non-rational one-scale transition": {
+      "fractions": {
+        "deferred": 0.0,
+        "null": 0.0,
+        "ST1/ST2 pass": 0.935,
+        "ST2 fail": 0.065,
+        "ST1 fail": 0.0
+      },
+      "wilson_68_intervals": {
+        "null": [
+          0.0,
+          0.002493765586034913
+        ],
+        "ST1/ST2 pass": [
+          0.9215565968145997,
+          0.9462738271255501
+        ],
+        "ST2 fail": [
+          0.053726172874450015,
+          0.07844340318540037
+        ],
+        "ST1 fail": [
+          0.0,
+          0.002493765586034913
+        ]
+      }
+    },
     "resolved positive two-scale": {
       "fractions": {
         "deferred": 0.0,
@@ -286,6 +323,15 @@
           0.002493765586034913
         ]
       }
+    }
+  },
+  "off_template_validation": {
+    "injection": "non-rational one-scale transition",
+    "included_in_threshold_calibration": false,
+    "noise_free_statistics": {
+      "nonnull": 340.32359675301535,
+      "st1": 2.20055019669207,
+      "st2": 0.7625418555967372
     }
   },
   "noise_operating_characteristics": [
@@ -656,6 +702,16 @@
         "160": {
           "max_absolute_response_difference_vs_320": 1.8699153336854124e-10,
           "max_difference_over_reference_peak_vs_320": 1.8016247179179967e-09
+        }
+      },
+      "nonrational_exponential": {
+        "80": {
+          "max_absolute_response_difference_vs_320": 1.0720746512760115e-09,
+          "max_difference_over_reference_peak_vs_320": 2.0461243020153076e-08
+        },
+        "160": {
+          "max_absolute_response_difference_vs_320": 9.278400270318343e-11,
+          "max_difference_over_reference_peak_vs_320": 1.7708431268594588e-09
         }
       },
       "piecewise_causal": {

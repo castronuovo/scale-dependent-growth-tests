@@ -107,3 +107,12 @@ Please cite the manuscript above and the foundational theory article:
 V. Castronuovo, *Scale-Dependent Growth of Large-Scale Structure from Infrared
 Modifications of Gravity*, Ann. Phys. (Berlin) **538**, e70230 (2026),
 <https://doi.org/10.1002/andp.70230>.
+
+## License
+
+- `benchmark_st1_st2.py` is licensed under the
+  [BSD 3-Clause License](LICENSE).
+- The documentation, JSON output, and figures are licensed under
+  [Creative Commons Attribution 4.0 International](LICENSE-CONTENT).
+
+Copyright (c) 2026 Vitantonio Castronuovo.

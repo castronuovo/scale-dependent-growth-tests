@@ -80,10 +80,12 @@ convergence check for representative constant-scale, evolving-scale,
 non-rational, and discontinuous causal histories.
 
 The frozen reproducibility target is
-[GitHub release v1.0.3](https://github.com/castronuovo/scale-dependent-growth-tests/releases/tag/v1.0.3),
+[GitHub release v1.0.5](https://github.com/castronuovo/scale-dependent-growth-tests/releases/tag/v1.0.5),
 rather than the moving `main` branch. This release synchronizes the stored
 machine-readable results and benchmark figures with the held-out non-rational
-one-scale validation and the published SHA-256 manifest.
+one-scale validation and the published SHA-256 manifest. Version `v1.0.5`
+also records the code and content licenses and corrects the frozen-release
+reference in this README; the scientific outputs are unchanged from `v1.0.3`.
 
 ## Expected SHA-256 hashes
 

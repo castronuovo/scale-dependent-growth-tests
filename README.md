@@ -1,12 +1,41 @@
 # ST1–ST2 semi-numerical benchmark
 
-This directory contains the reproducibility materials for the benchmark in
-*Testing a Single Physical Infrared Scale in the Growth of Cosmic Structure:
-A Conditional Classification Framework*.
+This repository contains the reproducibility materials for
+*Testing a Single Physical Infrared Scale in Cosmic Growth*.
 
 The calculation is an indicative, semi-numerical validation of the declared
 classification logic. It is not a catalogue analysis, a survey forecast, a
 Boltzmann-code validation, or a nonlinear large-scale-structure pipeline.
+
+## Revision reproducibility
+
+[Release v1.0.6](https://github.com/castronuovo/scale-dependent-growth-tests/releases/tag/v1.0.6)
+includes `revision_reproducibility.zip`, the same bundle supplied with the
+revised manuscript. It contains the frozen original benchmark
+(`reproducibility.zip`) and the scripts and machine-readable results for the
+additional synthetic checks. These cover independent noise draws and held-out
+constant-scale injections, sensitivity to thresholds and fitting-bank support,
+paired drift comparisons, and spectroscopic redshift smearing. The JSON records
+the settings, event counts, denominators, and Monte Carlo intervals for the
+sampled cases.
+
+After installing the dependencies below, run the following commands from the
+repository root or the extracted bundle. In the extracted bundle, retrieve
+the pinned dependency list with
+`unzip -p reproducibility.zip requirements.txt > requirements.txt`.
+The first command regenerates
+`stress_test/stress_test_results.json`. The remaining commands render the
+updated diagnostics and schematics.
+
+```bash
+MPLBACKEND=Agg python3 stress_test/run_stress_test.py
+mkdir -p main/figs supplement/figs ita/figs
+MPLBACKEND=Agg python3 stress_test/render_revision_figures.py
+```
+
+See [the revision instructions](stress_test/README.md) for the interpretation
+of the stored results. Release v1.0.5 remains the reference for the original
+benchmark documented below.
 
 ## Environment
 
@@ -112,7 +141,7 @@ Modifications of Gravity*, Ann. Phys. (Berlin) **538**, e70230 (2026),
 
 ## License
 
-- `benchmark_st1_st2.py` is licensed under the
+- The Python scripts are licensed under the
   [BSD 3-Clause License](LICENSE).
 - The documentation, JSON output, and figures are licensed under
   [Creative Commons Attribution 4.0 International](LICENSE-CONTENT).

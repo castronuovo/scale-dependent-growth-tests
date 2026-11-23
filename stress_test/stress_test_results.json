@@ -1,0 +1,6871 @@
+{
+  "runtime": {
+    "python": "3.9.6",
+    "numpy": "2.0.2"
+  },
+  "evaluation_draws_per_truth": 4000,
+  "truth_beta_mass_power": {
+    "gr": [
+      0.0,
+      0.105,
+      1.0
+    ],
+    "constant_a": [
+      0.033,
+      0.09,
+      1.0
+    ],
+    "constant_b": [
+      0.036,
+      0.15,
+      1.0
+    ],
+    "constant_c": [
+      0.053,
+      0.12,
+      1.0
+    ],
+    "drift_0.5": [
+      0.08,
+      0.105,
+      1.5
+    ],
+    "drift_1": [
+      0.08,
+      0.105,
+      2.0
+    ]
+  },
+  "resolved_two_scale_beta_mass_pairs": [
+    [
+      0.1,
+      0.045
+    ],
+    [
+      0.1,
+      0.195
+    ]
+  ],
+  "thresholds": {
+    "nominal": {
+      "nonnull_99": 26.543283956609308,
+      "st1_95": 36.279170974003485,
+      "st2_95": 5.587292863172837
+    },
+    "null_lower": {
+      "nonnull_99": 23.738097182608552,
+      "st1_95": 36.279170974003485,
+      "st2_95": 5.587292863172837
+    },
+    "null_upper": {
+      "nonnull_99": 28.331198221853803,
+      "st1_95": 36.279170974003485,
+      "st2_95": 5.587292863172837
+    },
+    "st1_lower": {
+      "nonnull_99": 26.543283956609308,
+      "st1_95": 32.49422178652126,
+      "st2_95": 5.587292863172837
+    },
+    "st1_upper": {
+      "nonnull_99": 26.543283956609308,
+      "st1_95": 40.78628565547169,
+      "st2_95": 5.587292863172837
+    },
+    "st2_lower": {
+      "nonnull_99": 26.543283956609308,
+      "st1_95": 36.279170974003485,
+      "st2_95": 3.9860129291969795
+    },
+    "st2_upper": {
+      "nonnull_99": 26.543283956609308,
+      "st1_95": 36.279170974003485,
+      "st2_95": 6.720745663602784
+    },
+    "expanded_mass_support": {
+      "nonnull_99": 26.543283956609283,
+      "st1_95": 36.279170974003485,
+      "st2_95": 5.777090466202466
+    }
+  },
+  "clean_validation": {
+    "gr": {
+      "nominal": {
+        "raw": {
+          "null": {
+            "n": 3961,
+            "denominator": 4000,
+            "fraction": 0.99025,
+            "wilson_95": [
+              0.9866999234961226,
+              0.9928593423583251
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 39,
+            "denominator": 4000,
+            "fraction": 0.00975,
+            "wilson_95": [
+              0.007140657641674861,
+              0.013300076503877448
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 39,
+          "denominator": 4000,
+          "fraction": 0.00975,
+          "wilson_95": [
+            0.007140657641674861,
+            0.013300076503877448
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 39,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.08966685370757144
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_entry": {
+          "n": 39,
+          "denominator": 4000,
+          "fraction": 0.00975,
+          "wilson_95": [
+            0.007140657641674861,
+            0.013300076503877448
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 0,
+          "denominator": 39,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.08966685370757144
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 39,
+          "denominator": 39,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9103331462924287,
+            1.0
+          ]
+        }
+      },
+      "null_lower": {
+        "raw": {
+          "null": {
+            "n": 3920,
+            "denominator": 4000,
+            "fraction": 0.98,
+            "wilson_95": [
+              0.9751785981654987,
+              0.983900336276388
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 80,
+            "denominator": 4000,
+            "fraction": 0.02,
+            "wilson_95": [
+              0.016099663723612052,
+              0.024821401834501378
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 80,
+          "denominator": 4000,
+          "fraction": 0.02,
+          "wilson_95": [
+            0.016099663723612052,
+            0.024821401834501378
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 80,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.0458181295355271
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_entry": {
+          "n": 80,
+          "denominator": 4000,
+          "fraction": 0.02,
+          "wilson_95": [
+            0.016099663723612052,
+            0.024821401834501378
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 0,
+          "denominator": 80,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.0458181295355271
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 80,
+          "denominator": 80,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9541818704644728,
+            0.9999999999999999
+          ]
+        }
+      },
+      "null_upper": {
+        "raw": {
+          "null": {
+            "n": 3980,
+            "denominator": 4000,
+            "fraction": 0.995,
+            "wilson_95": [
+              0.9922892796106572,
+              0.9967608715325383
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 20,
+            "denominator": 4000,
+            "fraction": 0.005,
+            "wilson_95": [
+              0.0032391284674616835,
+              0.007710720389342788
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 20,
+          "denominator": 4000,
+          "fraction": 0.005,
+          "wilson_95": [
+            0.0032391284674616835,
+            0.007710720389342788
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 20,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.16112515805281938
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_entry": {
+          "n": 20,
+          "denominator": 4000,
+          "fraction": 0.005,
+          "wilson_95": [
+            0.0032391284674616835,
+            0.007710720389342788
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 0,
+          "denominator": 20,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.16112515805281938
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 20,
+          "denominator": 20,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.8388748419471806,
+            1.0
+          ]
+        }
+      },
+      "st1_lower": {
+        "raw": {
+          "null": {
+            "n": 3961,
+            "denominator": 4000,
+            "fraction": 0.99025,
+            "wilson_95": [
+              0.9866999234961226,
+              0.9928593423583251
+            ]
+          },
+          "ST1 fail": {
+            "n": 3,
+            "denominator": 4000,
+            "fraction": 0.00075,
+            "wilson_95": [
+              0.0002550997283718515,
+              0.002202904396395083
+            ]
+          },
+          "ST2 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 36,
+            "denominator": 4000,
+            "fraction": 0.009,
+            "wilson_95": [
+              0.006508115623053612,
+              0.01243405768743325
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 39,
+          "denominator": 4000,
+          "fraction": 0.00975,
+          "wilson_95": [
+            0.007140657641674861,
+            0.013300076503877448
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 3,
+          "denominator": 4000,
+          "fraction": 0.00075,
+          "wilson_95": [
+            0.0002550997283718515,
+            0.002202904396395083
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 3,
+          "denominator": 39,
+          "fraction": 0.07692307692307693,
+          "wilson_95": [
+            0.02650739530377974,
+            0.20321071167954996
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_entry": {
+          "n": 36,
+          "denominator": 4000,
+          "fraction": 0.009,
+          "wilson_95": [
+            0.006508115623053612,
+            0.01243405768743325
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 0,
+          "denominator": 36,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.09641862859446367
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 36,
+          "denominator": 36,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9035813714055363,
+            1.0
+          ]
+        }
+      },
+      "st1_upper": {
+        "raw": {
+          "null": {
+            "n": 3961,
+            "denominator": 4000,
+            "fraction": 0.99025,
+            "wilson_95": [
+              0.9866999234961226,
+              0.9928593423583251
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 39,
+            "denominator": 4000,
+            "fraction": 0.00975,
+            "wilson_95": [
+              0.007140657641674861,
+              0.013300076503877448
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 39,
+          "denominator": 4000,
+          "fraction": 0.00975,
+          "wilson_95": [
+            0.007140657641674861,
+            0.013300076503877448
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 39,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.08966685370757144
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_entry": {
+          "n": 39,
+          "denominator": 4000,
+          "fraction": 0.00975,
+          "wilson_95": [
+            0.007140657641674861,
+            0.013300076503877448
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 0,
+          "denominator": 39,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.08966685370757144
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 39,
+          "denominator": 39,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9103331462924287,
+            1.0
+          ]
+        }
+      },
+      "st2_lower": {
+        "raw": {
+          "null": {
+            "n": 3961,
+            "denominator": 4000,
+            "fraction": 0.99025,
+            "wilson_95": [
+              0.9866999234961226,
+              0.9928593423583251
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3,
+            "denominator": 4000,
+            "fraction": 0.00075,
+            "wilson_95": [
+              0.0002550997283718515,
+              0.002202904396395083
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 36,
+            "denominator": 4000,
+            "fraction": 0.009,
+            "wilson_95": [
+              0.006508115623053612,
+              0.01243405768743325
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 39,
+          "denominator": 4000,
+          "fraction": 0.00975,
+          "wilson_95": [
+            0.007140657641674861,
+            0.013300076503877448
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 39,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.08966685370757144
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 6,
+          "denominator": 4000,
+          "fraction": 0.0015,
+          "wilson_95": [
+            0.0006876391063442419,
+            0.003268925853488141
+          ]
+        },
+        "st2_entry": {
+          "n": 39,
+          "denominator": 4000,
+          "fraction": 0.00975,
+          "wilson_95": [
+            0.007140657641674861,
+            0.013300076503877448
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3,
+          "denominator": 39,
+          "fraction": 0.07692307692307693,
+          "wilson_95": [
+            0.02650739530377974,
+            0.20321071167954996
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 36,
+          "denominator": 39,
+          "fraction": 0.9230769230769231,
+          "wilson_95": [
+            0.7967892883204503,
+            0.9734926046962203
+          ]
+        }
+      },
+      "st2_upper": {
+        "raw": {
+          "null": {
+            "n": 3961,
+            "denominator": 4000,
+            "fraction": 0.99025,
+            "wilson_95": [
+              0.9866999234961226,
+              0.9928593423583251
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 39,
+            "denominator": 4000,
+            "fraction": 0.00975,
+            "wilson_95": [
+              0.007140657641674861,
+              0.013300076503877448
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 39,
+          "denominator": 4000,
+          "fraction": 0.00975,
+          "wilson_95": [
+            0.007140657641674861,
+            0.013300076503877448
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 39,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.08966685370757144
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_entry": {
+          "n": 39,
+          "denominator": 4000,
+          "fraction": 0.00975,
+          "wilson_95": [
+            0.007140657641674861,
+            0.013300076503877448
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 0,
+          "denominator": 39,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.08966685370757144
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 39,
+          "denominator": 39,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9103331462924287,
+            1.0
+          ]
+        }
+      },
+      "expanded_mass_support": {
+        "raw": {
+          "null": {
+            "n": 3961,
+            "denominator": 4000,
+            "fraction": 0.99025,
+            "wilson_95": [
+              0.9866999234961226,
+              0.9928593423583251
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 39,
+            "denominator": 4000,
+            "fraction": 0.00975,
+            "wilson_95": [
+              0.007140657641674861,
+              0.013300076503877448
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 39,
+          "denominator": 4000,
+          "fraction": 0.00975,
+          "wilson_95": [
+            0.007140657641674861,
+            0.013300076503877448
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 39,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.08966685370757144
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_entry": {
+          "n": 39,
+          "denominator": 4000,
+          "fraction": 0.00975,
+          "wilson_95": [
+            0.007140657641674861,
+            0.013300076503877448
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 0,
+          "denominator": 39,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.08966685370757144
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 39,
+          "denominator": 39,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9103331462924287,
+            1.0
+          ]
+        }
+      }
+    },
+    "constant_a": {
+      "nominal": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 187,
+            "denominator": 4000,
+            "fraction": 0.04675,
+            "wilson_95": [
+              0.04063153566283215,
+              0.053738199679282256
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3813,
+            "denominator": 4000,
+            "fraction": 0.95325,
+            "wilson_95": [
+              0.9462618003207178,
+              0.9593684643371679
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 187,
+          "denominator": 4000,
+          "fraction": 0.04675,
+          "wilson_95": [
+            0.04063153566283215,
+            0.053738199679282256
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 187,
+          "denominator": 4000,
+          "fraction": 0.04675,
+          "wilson_95": [
+            0.04063153566283215,
+            0.053738199679282256
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3813,
+          "denominator": 4000,
+          "fraction": 0.95325,
+          "wilson_95": [
+            0.9462618003207178,
+            0.9593684643371679
+          ]
+        }
+      },
+      "null_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 187,
+            "denominator": 4000,
+            "fraction": 0.04675,
+            "wilson_95": [
+              0.04063153566283215,
+              0.053738199679282256
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3813,
+            "denominator": 4000,
+            "fraction": 0.95325,
+            "wilson_95": [
+              0.9462618003207178,
+              0.9593684643371679
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 187,
+          "denominator": 4000,
+          "fraction": 0.04675,
+          "wilson_95": [
+            0.04063153566283215,
+            0.053738199679282256
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 187,
+          "denominator": 4000,
+          "fraction": 0.04675,
+          "wilson_95": [
+            0.04063153566283215,
+            0.053738199679282256
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3813,
+          "denominator": 4000,
+          "fraction": 0.95325,
+          "wilson_95": [
+            0.9462618003207178,
+            0.9593684643371679
+          ]
+        }
+      },
+      "null_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 187,
+            "denominator": 4000,
+            "fraction": 0.04675,
+            "wilson_95": [
+              0.04063153566283215,
+              0.053738199679282256
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3813,
+            "denominator": 4000,
+            "fraction": 0.95325,
+            "wilson_95": [
+              0.9462618003207178,
+              0.9593684643371679
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 187,
+          "denominator": 4000,
+          "fraction": 0.04675,
+          "wilson_95": [
+            0.04063153566283215,
+            0.053738199679282256
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 187,
+          "denominator": 4000,
+          "fraction": 0.04675,
+          "wilson_95": [
+            0.04063153566283215,
+            0.053738199679282256
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3813,
+          "denominator": 4000,
+          "fraction": 0.95325,
+          "wilson_95": [
+            0.9462618003207178,
+            0.9593684643371679
+          ]
+        }
+      },
+      "st1_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 1,
+            "denominator": 4000,
+            "fraction": 0.00025,
+            "wilson_95": [
+              4.4132501957676274e-05,
+              0.0014148310660989595
+            ]
+          },
+          "ST2 fail": {
+            "n": 187,
+            "denominator": 4000,
+            "fraction": 0.04675,
+            "wilson_95": [
+              0.04063153566283215,
+              0.053738199679282256
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3812,
+            "denominator": 4000,
+            "fraction": 0.953,
+            "wilson_95": [
+              0.9459954919988904,
+              0.95913525238064
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 1,
+          "denominator": 4000,
+          "fraction": 0.00025,
+          "wilson_95": [
+            4.4132501957676274e-05,
+            0.0014148310660989595
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 1,
+          "denominator": 4000,
+          "fraction": 0.00025,
+          "wilson_95": [
+            4.4132501957676274e-05,
+            0.0014148310660989595
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 187,
+          "denominator": 4000,
+          "fraction": 0.04675,
+          "wilson_95": [
+            0.04063153566283215,
+            0.053738199679282256
+          ]
+        },
+        "st2_entry": {
+          "n": 3999,
+          "denominator": 4000,
+          "fraction": 0.99975,
+          "wilson_95": [
+            0.9985851689339011,
+            0.9999558674980424
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 187,
+          "denominator": 3999,
+          "fraction": 0.04676169042260565,
+          "wilson_95": [
+            0.040641726315065005,
+            0.053751584713549336
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3812,
+          "denominator": 3999,
+          "fraction": 0.9532383095773943,
+          "wilson_95": [
+            0.9462484152864505,
+            0.9593582736849349
+          ]
+        }
+      },
+      "st1_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 187,
+            "denominator": 4000,
+            "fraction": 0.04675,
+            "wilson_95": [
+              0.04063153566283215,
+              0.053738199679282256
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3813,
+            "denominator": 4000,
+            "fraction": 0.95325,
+            "wilson_95": [
+              0.9462618003207178,
+              0.9593684643371679
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 187,
+          "denominator": 4000,
+          "fraction": 0.04675,
+          "wilson_95": [
+            0.04063153566283215,
+            0.053738199679282256
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 187,
+          "denominator": 4000,
+          "fraction": 0.04675,
+          "wilson_95": [
+            0.04063153566283215,
+            0.053738199679282256
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3813,
+          "denominator": 4000,
+          "fraction": 0.95325,
+          "wilson_95": [
+            0.9462618003207178,
+            0.9593684643371679
+          ]
+        }
+      },
+      "st2_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 480,
+            "denominator": 4000,
+            "fraction": 0.12,
+            "wilson_95": [
+              0.11029234261658877,
+              0.13043683428358435
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3520,
+            "denominator": 4000,
+            "fraction": 0.88,
+            "wilson_95": [
+              0.8695631657164157,
+              0.8897076573834112
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 480,
+          "denominator": 4000,
+          "fraction": 0.12,
+          "wilson_95": [
+            0.11029234261658877,
+            0.13043683428358435
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 480,
+          "denominator": 4000,
+          "fraction": 0.12,
+          "wilson_95": [
+            0.11029234261658877,
+            0.13043683428358435
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3520,
+          "denominator": 4000,
+          "fraction": 0.88,
+          "wilson_95": [
+            0.8695631657164157,
+            0.8897076573834112
+          ]
+        }
+      },
+      "st2_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 88,
+            "denominator": 4000,
+            "fraction": 0.022,
+            "wilson_95": [
+              0.017892027801797494,
+              0.027025199983157125
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3912,
+            "denominator": 4000,
+            "fraction": 0.978,
+            "wilson_95": [
+              0.9729748000168429,
+              0.9821079721982026
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 88,
+          "denominator": 4000,
+          "fraction": 0.022,
+          "wilson_95": [
+            0.017892027801797494,
+            0.027025199983157125
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 88,
+          "denominator": 4000,
+          "fraction": 0.022,
+          "wilson_95": [
+            0.017892027801797494,
+            0.027025199983157125
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3912,
+          "denominator": 4000,
+          "fraction": 0.978,
+          "wilson_95": [
+            0.9729748000168429,
+            0.9821079721982026
+          ]
+        }
+      },
+      "expanded_mass_support": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 207,
+            "denominator": 4000,
+            "fraction": 0.05175,
+            "wilson_95": [
+              0.045304992146476264,
+              0.05905514876274112
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3793,
+            "denominator": 4000,
+            "fraction": 0.94825,
+            "wilson_95": [
+              0.940944851237259,
+              0.9546950078535238
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 207,
+          "denominator": 4000,
+          "fraction": 0.05175,
+          "wilson_95": [
+            0.045304992146476264,
+            0.05905514876274112
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 207,
+          "denominator": 4000,
+          "fraction": 0.05175,
+          "wilson_95": [
+            0.045304992146476264,
+            0.05905514876274112
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3793,
+          "denominator": 4000,
+          "fraction": 0.94825,
+          "wilson_95": [
+            0.940944851237259,
+            0.9546950078535238
+          ]
+        }
+      }
+    },
+    "constant_b": {
+      "nominal": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 70,
+            "denominator": 4000,
+            "fraction": 0.0175,
+            "wilson_95": [
+              0.013875054978724221,
+              0.022050807795837717
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3930,
+            "denominator": 4000,
+            "fraction": 0.9825,
+            "wilson_95": [
+              0.9779491922041623,
+              0.9861249450212759
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 70,
+          "denominator": 4000,
+          "fraction": 0.0175,
+          "wilson_95": [
+            0.013875054978724221,
+            0.022050807795837717
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 70,
+          "denominator": 4000,
+          "fraction": 0.0175,
+          "wilson_95": [
+            0.013875054978724221,
+            0.022050807795837717
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3930,
+          "denominator": 4000,
+          "fraction": 0.9825,
+          "wilson_95": [
+            0.9779491922041623,
+            0.9861249450212759
+          ]
+        }
+      },
+      "null_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 70,
+            "denominator": 4000,
+            "fraction": 0.0175,
+            "wilson_95": [
+              0.013875054978724221,
+              0.022050807795837717
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3930,
+            "denominator": 4000,
+            "fraction": 0.9825,
+            "wilson_95": [
+              0.9779491922041623,
+              0.9861249450212759
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 70,
+          "denominator": 4000,
+          "fraction": 0.0175,
+          "wilson_95": [
+            0.013875054978724221,
+            0.022050807795837717
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 70,
+          "denominator": 4000,
+          "fraction": 0.0175,
+          "wilson_95": [
+            0.013875054978724221,
+            0.022050807795837717
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3930,
+          "denominator": 4000,
+          "fraction": 0.9825,
+          "wilson_95": [
+            0.9779491922041623,
+            0.9861249450212759
+          ]
+        }
+      },
+      "null_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 70,
+            "denominator": 4000,
+            "fraction": 0.0175,
+            "wilson_95": [
+              0.013875054978724221,
+              0.022050807795837717
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3930,
+            "denominator": 4000,
+            "fraction": 0.9825,
+            "wilson_95": [
+              0.9779491922041623,
+              0.9861249450212759
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 70,
+          "denominator": 4000,
+          "fraction": 0.0175,
+          "wilson_95": [
+            0.013875054978724221,
+            0.022050807795837717
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 70,
+          "denominator": 4000,
+          "fraction": 0.0175,
+          "wilson_95": [
+            0.013875054978724221,
+            0.022050807795837717
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3930,
+          "denominator": 4000,
+          "fraction": 0.9825,
+          "wilson_95": [
+            0.9779491922041623,
+            0.9861249450212759
+          ]
+        }
+      },
+      "st1_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 70,
+            "denominator": 4000,
+            "fraction": 0.0175,
+            "wilson_95": [
+              0.013875054978724221,
+              0.022050807795837717
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3930,
+            "denominator": 4000,
+            "fraction": 0.9825,
+            "wilson_95": [
+              0.9779491922041623,
+              0.9861249450212759
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 70,
+          "denominator": 4000,
+          "fraction": 0.0175,
+          "wilson_95": [
+            0.013875054978724221,
+            0.022050807795837717
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 70,
+          "denominator": 4000,
+          "fraction": 0.0175,
+          "wilson_95": [
+            0.013875054978724221,
+            0.022050807795837717
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3930,
+          "denominator": 4000,
+          "fraction": 0.9825,
+          "wilson_95": [
+            0.9779491922041623,
+            0.9861249450212759
+          ]
+        }
+      },
+      "st1_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 70,
+            "denominator": 4000,
+            "fraction": 0.0175,
+            "wilson_95": [
+              0.013875054978724221,
+              0.022050807795837717
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3930,
+            "denominator": 4000,
+            "fraction": 0.9825,
+            "wilson_95": [
+              0.9779491922041623,
+              0.9861249450212759
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 70,
+          "denominator": 4000,
+          "fraction": 0.0175,
+          "wilson_95": [
+            0.013875054978724221,
+            0.022050807795837717
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 70,
+          "denominator": 4000,
+          "fraction": 0.0175,
+          "wilson_95": [
+            0.013875054978724221,
+            0.022050807795837717
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3930,
+          "denominator": 4000,
+          "fraction": 0.9825,
+          "wilson_95": [
+            0.9779491922041623,
+            0.9861249450212759
+          ]
+        }
+      },
+      "st2_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 198,
+            "denominator": 4000,
+            "fraction": 0.0495,
+            "wilson_95": [
+              0.043199593091043056,
+              0.056664865312978
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3802,
+            "denominator": 4000,
+            "fraction": 0.9505,
+            "wilson_95": [
+              0.9433351346870221,
+              0.956800406908957
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 198,
+          "denominator": 4000,
+          "fraction": 0.0495,
+          "wilson_95": [
+            0.043199593091043056,
+            0.056664865312978
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 198,
+          "denominator": 4000,
+          "fraction": 0.0495,
+          "wilson_95": [
+            0.043199593091043056,
+            0.056664865312978
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3802,
+          "denominator": 4000,
+          "fraction": 0.9505,
+          "wilson_95": [
+            0.9433351346870221,
+            0.956800406908957
+          ]
+        }
+      },
+      "st2_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 37,
+            "denominator": 4000,
+            "fraction": 0.00925,
+            "wilson_95": [
+              0.006718438633114451,
+              0.01272325495572756
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3963,
+            "denominator": 4000,
+            "fraction": 0.99075,
+            "wilson_95": [
+              0.9872767450442724,
+              0.9932815613668856
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 37,
+          "denominator": 4000,
+          "fraction": 0.00925,
+          "wilson_95": [
+            0.006718438633114451,
+            0.01272325495572756
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 37,
+          "denominator": 4000,
+          "fraction": 0.00925,
+          "wilson_95": [
+            0.006718438633114451,
+            0.01272325495572756
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3963,
+          "denominator": 4000,
+          "fraction": 0.99075,
+          "wilson_95": [
+            0.9872767450442724,
+            0.9932815613668856
+          ]
+        }
+      },
+      "expanded_mass_support": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 64,
+            "denominator": 4000,
+            "fraction": 0.016,
+            "wilson_95": [
+              0.012550150941255354,
+              0.020378590163175683
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3936,
+            "denominator": 4000,
+            "fraction": 0.984,
+            "wilson_95": [
+              0.9796214098368243,
+              0.9874498490587447
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 64,
+          "denominator": 4000,
+          "fraction": 0.016,
+          "wilson_95": [
+            0.012550150941255354,
+            0.020378590163175683
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 64,
+          "denominator": 4000,
+          "fraction": 0.016,
+          "wilson_95": [
+            0.012550150941255354,
+            0.020378590163175683
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3936,
+          "denominator": 4000,
+          "fraction": 0.984,
+          "wilson_95": [
+            0.9796214098368243,
+            0.9874498490587447
+          ]
+        }
+      }
+    },
+    "constant_c": {
+      "nominal": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 133,
+            "denominator": 4000,
+            "fraction": 0.03325,
+            "wilson_95": [
+              0.028126347481906244,
+              0.03926929282903011
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3867,
+            "denominator": 4000,
+            "fraction": 0.96675,
+            "wilson_95": [
+              0.9607307071709699,
+              0.9718736525180938
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 133,
+          "denominator": 4000,
+          "fraction": 0.03325,
+          "wilson_95": [
+            0.028126347481906244,
+            0.03926929282903011
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 133,
+          "denominator": 4000,
+          "fraction": 0.03325,
+          "wilson_95": [
+            0.028126347481906244,
+            0.03926929282903011
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3867,
+          "denominator": 4000,
+          "fraction": 0.96675,
+          "wilson_95": [
+            0.9607307071709699,
+            0.9718736525180938
+          ]
+        }
+      },
+      "null_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 133,
+            "denominator": 4000,
+            "fraction": 0.03325,
+            "wilson_95": [
+              0.028126347481906244,
+              0.03926929282903011
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3867,
+            "denominator": 4000,
+            "fraction": 0.96675,
+            "wilson_95": [
+              0.9607307071709699,
+              0.9718736525180938
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 133,
+          "denominator": 4000,
+          "fraction": 0.03325,
+          "wilson_95": [
+            0.028126347481906244,
+            0.03926929282903011
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 133,
+          "denominator": 4000,
+          "fraction": 0.03325,
+          "wilson_95": [
+            0.028126347481906244,
+            0.03926929282903011
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3867,
+          "denominator": 4000,
+          "fraction": 0.96675,
+          "wilson_95": [
+            0.9607307071709699,
+            0.9718736525180938
+          ]
+        }
+      },
+      "null_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 133,
+            "denominator": 4000,
+            "fraction": 0.03325,
+            "wilson_95": [
+              0.028126347481906244,
+              0.03926929282903011
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3867,
+            "denominator": 4000,
+            "fraction": 0.96675,
+            "wilson_95": [
+              0.9607307071709699,
+              0.9718736525180938
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 133,
+          "denominator": 4000,
+          "fraction": 0.03325,
+          "wilson_95": [
+            0.028126347481906244,
+            0.03926929282903011
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 133,
+          "denominator": 4000,
+          "fraction": 0.03325,
+          "wilson_95": [
+            0.028126347481906244,
+            0.03926929282903011
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3867,
+          "denominator": 4000,
+          "fraction": 0.96675,
+          "wilson_95": [
+            0.9607307071709699,
+            0.9718736525180938
+          ]
+        }
+      },
+      "st1_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 1,
+            "denominator": 4000,
+            "fraction": 0.00025,
+            "wilson_95": [
+              4.4132501957676274e-05,
+              0.0014148310660989595
+            ]
+          },
+          "ST2 fail": {
+            "n": 133,
+            "denominator": 4000,
+            "fraction": 0.03325,
+            "wilson_95": [
+              0.028126347481906244,
+              0.03926929282903011
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3866,
+            "denominator": 4000,
+            "fraction": 0.9665,
+            "wilson_95": [
+              0.9604609133704488,
+              0.9716439260402597
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 1,
+          "denominator": 4000,
+          "fraction": 0.00025,
+          "wilson_95": [
+            4.4132501957676274e-05,
+            0.0014148310660989595
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 1,
+          "denominator": 4000,
+          "fraction": 0.00025,
+          "wilson_95": [
+            4.4132501957676274e-05,
+            0.0014148310660989595
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 133,
+          "denominator": 4000,
+          "fraction": 0.03325,
+          "wilson_95": [
+            0.028126347481906244,
+            0.03926929282903011
+          ]
+        },
+        "st2_entry": {
+          "n": 3999,
+          "denominator": 4000,
+          "fraction": 0.99975,
+          "wilson_95": [
+            0.9985851689339011,
+            0.9999558674980424
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 133,
+          "denominator": 3999,
+          "fraction": 0.033258314578644664,
+          "wilson_95": [
+            0.028133397864553742,
+            0.03927907939608552
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3866,
+          "denominator": 3999,
+          "fraction": 0.9667416854213553,
+          "wilson_95": [
+            0.9607209206039143,
+            0.9718666021354462
+          ]
+        }
+      },
+      "st1_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 133,
+            "denominator": 4000,
+            "fraction": 0.03325,
+            "wilson_95": [
+              0.028126347481906244,
+              0.03926929282903011
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3867,
+            "denominator": 4000,
+            "fraction": 0.96675,
+            "wilson_95": [
+              0.9607307071709699,
+              0.9718736525180938
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 133,
+          "denominator": 4000,
+          "fraction": 0.03325,
+          "wilson_95": [
+            0.028126347481906244,
+            0.03926929282903011
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 133,
+          "denominator": 4000,
+          "fraction": 0.03325,
+          "wilson_95": [
+            0.028126347481906244,
+            0.03926929282903011
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3867,
+          "denominator": 4000,
+          "fraction": 0.96675,
+          "wilson_95": [
+            0.9607307071709699,
+            0.9718736525180938
+          ]
+        }
+      },
+      "st2_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 337,
+            "denominator": 4000,
+            "fraction": 0.08425,
+            "wilson_95": [
+              0.07603599003468836,
+              0.09326178706069843
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3663,
+            "denominator": 4000,
+            "fraction": 0.91575,
+            "wilson_95": [
+              0.9067382129393016,
+              0.9239640099653117
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 337,
+          "denominator": 4000,
+          "fraction": 0.08425,
+          "wilson_95": [
+            0.07603599003468836,
+            0.09326178706069843
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 337,
+          "denominator": 4000,
+          "fraction": 0.08425,
+          "wilson_95": [
+            0.07603599003468836,
+            0.09326178706069843
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3663,
+          "denominator": 4000,
+          "fraction": 0.91575,
+          "wilson_95": [
+            0.9067382129393016,
+            0.9239640099653117
+          ]
+        }
+      },
+      "st2_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 76,
+            "denominator": 4000,
+            "fraction": 0.019,
+            "wilson_95": [
+              0.015207548340719364,
+              0.023715436103973468
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3924,
+            "denominator": 4000,
+            "fraction": 0.981,
+            "wilson_95": [
+              0.9762845638960266,
+              0.9847924516592806
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 76,
+          "denominator": 4000,
+          "fraction": 0.019,
+          "wilson_95": [
+            0.015207548340719364,
+            0.023715436103973468
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 76,
+          "denominator": 4000,
+          "fraction": 0.019,
+          "wilson_95": [
+            0.015207548340719364,
+            0.023715436103973468
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3924,
+          "denominator": 4000,
+          "fraction": 0.981,
+          "wilson_95": [
+            0.9762845638960266,
+            0.9847924516592806
+          ]
+        }
+      },
+      "expanded_mass_support": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 128,
+            "denominator": 4000,
+            "fraction": 0.032,
+            "wilson_95": [
+              0.026978979805530705,
+              0.037919059113629895
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3872,
+            "denominator": 4000,
+            "fraction": 0.968,
+            "wilson_95": [
+              0.9620809408863701,
+              0.9730210201944692
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 128,
+          "denominator": 4000,
+          "fraction": 0.032,
+          "wilson_95": [
+            0.026978979805530705,
+            0.037919059113629895
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 128,
+          "denominator": 4000,
+          "fraction": 0.032,
+          "wilson_95": [
+            0.026978979805530705,
+            0.037919059113629895
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3872,
+          "denominator": 4000,
+          "fraction": 0.968,
+          "wilson_95": [
+            0.9620809408863701,
+            0.9730210201944692
+          ]
+        }
+      }
+    },
+    "drift_0.5": {
+      "nominal": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3633,
+            "denominator": 4000,
+            "fraction": 0.90825,
+            "wilson_95": [
+              0.8989081289859359,
+              0.9168084855680229
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 367,
+            "denominator": 4000,
+            "fraction": 0.09175,
+            "wilson_95": [
+              0.08319151443197714,
+              0.10109187101406411
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3633,
+          "denominator": 4000,
+          "fraction": 0.90825,
+          "wilson_95": [
+            0.8989081289859359,
+            0.9168084855680229
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3633,
+          "denominator": 4000,
+          "fraction": 0.90825,
+          "wilson_95": [
+            0.8989081289859359,
+            0.9168084855680229
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 367,
+          "denominator": 4000,
+          "fraction": 0.09175,
+          "wilson_95": [
+            0.08319151443197714,
+            0.10109187101406411
+          ]
+        }
+      },
+      "null_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3633,
+            "denominator": 4000,
+            "fraction": 0.90825,
+            "wilson_95": [
+              0.8989081289859359,
+              0.9168084855680229
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 367,
+            "denominator": 4000,
+            "fraction": 0.09175,
+            "wilson_95": [
+              0.08319151443197714,
+              0.10109187101406411
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3633,
+          "denominator": 4000,
+          "fraction": 0.90825,
+          "wilson_95": [
+            0.8989081289859359,
+            0.9168084855680229
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3633,
+          "denominator": 4000,
+          "fraction": 0.90825,
+          "wilson_95": [
+            0.8989081289859359,
+            0.9168084855680229
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 367,
+          "denominator": 4000,
+          "fraction": 0.09175,
+          "wilson_95": [
+            0.08319151443197714,
+            0.10109187101406411
+          ]
+        }
+      },
+      "null_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3633,
+            "denominator": 4000,
+            "fraction": 0.90825,
+            "wilson_95": [
+              0.8989081289859359,
+              0.9168084855680229
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 367,
+            "denominator": 4000,
+            "fraction": 0.09175,
+            "wilson_95": [
+              0.08319151443197714,
+              0.10109187101406411
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3633,
+          "denominator": 4000,
+          "fraction": 0.90825,
+          "wilson_95": [
+            0.8989081289859359,
+            0.9168084855680229
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3633,
+          "denominator": 4000,
+          "fraction": 0.90825,
+          "wilson_95": [
+            0.8989081289859359,
+            0.9168084855680229
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 367,
+          "denominator": 4000,
+          "fraction": 0.09175,
+          "wilson_95": [
+            0.08319151443197714,
+            0.10109187101406411
+          ]
+        }
+      },
+      "st1_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 4,
+            "denominator": 4000,
+            "fraction": 0.001,
+            "wilson_95": [
+              0.00038894703739082324,
+              0.0025685773657312607
+            ]
+          },
+          "ST2 fail": {
+            "n": 3630,
+            "denominator": 4000,
+            "fraction": 0.9075,
+            "wilson_95": [
+              0.8981261471626838,
+              0.9160919065562094
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 366,
+            "denominator": 4000,
+            "fraction": 0.0915,
+            "wilson_95": [
+              0.08295269474855974,
+              0.10083117041912637
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 4,
+          "denominator": 4000,
+          "fraction": 0.001,
+          "wilson_95": [
+            0.00038894703739082324,
+            0.0025685773657312607
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 4,
+          "denominator": 4000,
+          "fraction": 0.001,
+          "wilson_95": [
+            0.00038894703739082324,
+            0.0025685773657312607
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3633,
+          "denominator": 4000,
+          "fraction": 0.90825,
+          "wilson_95": [
+            0.8989081289859359,
+            0.9168084855680229
+          ]
+        },
+        "st2_entry": {
+          "n": 3996,
+          "denominator": 4000,
+          "fraction": 0.999,
+          "wilson_95": [
+            0.9974314226342689,
+            0.9996110529626092
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3630,
+          "denominator": 3996,
+          "fraction": 0.9084084084084084,
+          "wilson_95": [
+            0.899068444187102,
+            0.9169638994954279
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 366,
+          "denominator": 3996,
+          "fraction": 0.0915915915915916,
+          "wilson_95": [
+            0.08303610050457214,
+            0.10093155581289809
+          ]
+        }
+      },
+      "st1_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3633,
+            "denominator": 4000,
+            "fraction": 0.90825,
+            "wilson_95": [
+              0.8989081289859359,
+              0.9168084855680229
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 367,
+            "denominator": 4000,
+            "fraction": 0.09175,
+            "wilson_95": [
+              0.08319151443197714,
+              0.10109187101406411
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3633,
+          "denominator": 4000,
+          "fraction": 0.90825,
+          "wilson_95": [
+            0.8989081289859359,
+            0.9168084855680229
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3633,
+          "denominator": 4000,
+          "fraction": 0.90825,
+          "wilson_95": [
+            0.8989081289859359,
+            0.9168084855680229
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 367,
+          "denominator": 4000,
+          "fraction": 0.09175,
+          "wilson_95": [
+            0.08319151443197714,
+            0.10109187101406411
+          ]
+        }
+      },
+      "st2_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3777,
+            "denominator": 4000,
+            "fraction": 0.94425,
+            "wilson_95": [
+              0.9367041726678699,
+              0.9509433619692306
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 223,
+            "denominator": 4000,
+            "fraction": 0.05575,
+            "wilson_95": [
+              0.04905663803076955,
+              0.06329582733213023
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3777,
+          "denominator": 4000,
+          "fraction": 0.94425,
+          "wilson_95": [
+            0.9367041726678699,
+            0.9509433619692306
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3777,
+          "denominator": 4000,
+          "fraction": 0.94425,
+          "wilson_95": [
+            0.9367041726678699,
+            0.9509433619692306
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 223,
+          "denominator": 4000,
+          "fraction": 0.05575,
+          "wilson_95": [
+            0.04905663803076955,
+            0.06329582733213023
+          ]
+        }
+      },
+      "st2_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3472,
+            "denominator": 4000,
+            "fraction": 0.868,
+            "wilson_95": [
+              0.8571562701515616,
+              0.8781375795872182
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 528,
+            "denominator": 4000,
+            "fraction": 0.132,
+            "wilson_95": [
+              0.12186242041278186,
+              0.14284372984843843
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3472,
+          "denominator": 4000,
+          "fraction": 0.868,
+          "wilson_95": [
+            0.8571562701515616,
+            0.8781375795872182
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3472,
+          "denominator": 4000,
+          "fraction": 0.868,
+          "wilson_95": [
+            0.8571562701515616,
+            0.8781375795872182
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 528,
+          "denominator": 4000,
+          "fraction": 0.132,
+          "wilson_95": [
+            0.12186242041278186,
+            0.14284372984843843
+          ]
+        }
+      },
+      "expanded_mass_support": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3614,
+            "denominator": 4000,
+            "fraction": 0.9035,
+            "wilson_95": [
+              0.8939585445882571,
+              0.9122671846769538
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 386,
+            "denominator": 4000,
+            "fraction": 0.0965,
+            "wilson_95": [
+              0.08773281532304618,
+              0.10604145541174294
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3614,
+          "denominator": 4000,
+          "fraction": 0.9035,
+          "wilson_95": [
+            0.8939585445882571,
+            0.9122671846769538
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3614,
+          "denominator": 4000,
+          "fraction": 0.9035,
+          "wilson_95": [
+            0.8939585445882571,
+            0.9122671846769538
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 386,
+          "denominator": 4000,
+          "fraction": 0.0965,
+          "wilson_95": [
+            0.08773281532304618,
+            0.10604145541174294
+          ]
+        }
+      }
+    },
+    "drift_1": {
+      "nominal": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3485,
+            "denominator": 4000,
+            "fraction": 0.87125,
+            "wilson_95": [
+              0.8605134923494372,
+              0.8812741210079594
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 515,
+            "denominator": 4000,
+            "fraction": 0.12875,
+            "wilson_95": [
+              0.11872587899204055,
+              0.1394865076505628
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3485,
+          "denominator": 4000,
+          "fraction": 0.87125,
+          "wilson_95": [
+            0.8605134923494372,
+            0.8812741210079594
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3485,
+          "denominator": 4000,
+          "fraction": 0.87125,
+          "wilson_95": [
+            0.8605134923494372,
+            0.8812741210079594
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 515,
+          "denominator": 4000,
+          "fraction": 0.12875,
+          "wilson_95": [
+            0.11872587899204055,
+            0.1394865076505628
+          ]
+        }
+      },
+      "null_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3485,
+            "denominator": 4000,
+            "fraction": 0.87125,
+            "wilson_95": [
+              0.8605134923494372,
+              0.8812741210079594
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 515,
+            "denominator": 4000,
+            "fraction": 0.12875,
+            "wilson_95": [
+              0.11872587899204055,
+              0.1394865076505628
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3485,
+          "denominator": 4000,
+          "fraction": 0.87125,
+          "wilson_95": [
+            0.8605134923494372,
+            0.8812741210079594
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3485,
+          "denominator": 4000,
+          "fraction": 0.87125,
+          "wilson_95": [
+            0.8605134923494372,
+            0.8812741210079594
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 515,
+          "denominator": 4000,
+          "fraction": 0.12875,
+          "wilson_95": [
+            0.11872587899204055,
+            0.1394865076505628
+          ]
+        }
+      },
+      "null_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3485,
+            "denominator": 4000,
+            "fraction": 0.87125,
+            "wilson_95": [
+              0.8605134923494372,
+              0.8812741210079594
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 515,
+            "denominator": 4000,
+            "fraction": 0.12875,
+            "wilson_95": [
+              0.11872587899204055,
+              0.1394865076505628
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3485,
+          "denominator": 4000,
+          "fraction": 0.87125,
+          "wilson_95": [
+            0.8605134923494372,
+            0.8812741210079594
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3485,
+          "denominator": 4000,
+          "fraction": 0.87125,
+          "wilson_95": [
+            0.8605134923494372,
+            0.8812741210079594
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 515,
+          "denominator": 4000,
+          "fraction": 0.12875,
+          "wilson_95": [
+            0.11872587899204055,
+            0.1394865076505628
+          ]
+        }
+      },
+      "st1_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 4,
+            "denominator": 4000,
+            "fraction": 0.001,
+            "wilson_95": [
+              0.00038894703739082324,
+              0.0025685773657312607
+            ]
+          },
+          "ST2 fail": {
+            "n": 3481,
+            "denominator": 4000,
+            "fraction": 0.87025,
+            "wilson_95": [
+              0.8594802728458115,
+              0.8803092593981645
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 515,
+            "denominator": 4000,
+            "fraction": 0.12875,
+            "wilson_95": [
+              0.11872587899204055,
+              0.1394865076505628
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 4,
+          "denominator": 4000,
+          "fraction": 0.001,
+          "wilson_95": [
+            0.00038894703739082324,
+            0.0025685773657312607
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 4,
+          "denominator": 4000,
+          "fraction": 0.001,
+          "wilson_95": [
+            0.00038894703739082324,
+            0.0025685773657312607
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3485,
+          "denominator": 4000,
+          "fraction": 0.87125,
+          "wilson_95": [
+            0.8605134923494372,
+            0.8812741210079594
+          ]
+        },
+        "st2_entry": {
+          "n": 3996,
+          "denominator": 4000,
+          "fraction": 0.999,
+          "wilson_95": [
+            0.9974314226342689,
+            0.9996110529626092
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3481,
+          "denominator": 3996,
+          "fraction": 0.8711211211211212,
+          "wilson_95": [
+            0.8603747672170399,
+            0.8811546235189847
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 515,
+          "denominator": 3996,
+          "fraction": 0.1288788788788789,
+          "wilson_95": [
+            0.11884537648101547,
+            0.13962523278296027
+          ]
+        }
+      },
+      "st1_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3485,
+            "denominator": 4000,
+            "fraction": 0.87125,
+            "wilson_95": [
+              0.8605134923494372,
+              0.8812741210079594
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 515,
+            "denominator": 4000,
+            "fraction": 0.12875,
+            "wilson_95": [
+              0.11872587899204055,
+              0.1394865076505628
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3485,
+          "denominator": 4000,
+          "fraction": 0.87125,
+          "wilson_95": [
+            0.8605134923494372,
+            0.8812741210079594
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3485,
+          "denominator": 4000,
+          "fraction": 0.87125,
+          "wilson_95": [
+            0.8605134923494372,
+            0.8812741210079594
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 515,
+          "denominator": 4000,
+          "fraction": 0.12875,
+          "wilson_95": [
+            0.11872587899204055,
+            0.1394865076505628
+          ]
+        }
+      },
+      "st2_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3698,
+            "denominator": 4000,
+            "fraction": 0.9245,
+            "wilson_95": [
+              0.9158991345820935,
+              0.93228629806495
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 302,
+            "denominator": 4000,
+            "fraction": 0.0755,
+            "wilson_95": [
+              0.06771370193505,
+              0.08410086541790657
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3698,
+          "denominator": 4000,
+          "fraction": 0.9245,
+          "wilson_95": [
+            0.9158991345820935,
+            0.93228629806495
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3698,
+          "denominator": 4000,
+          "fraction": 0.9245,
+          "wilson_95": [
+            0.9158991345820935,
+            0.93228629806495
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 302,
+          "denominator": 4000,
+          "fraction": 0.0755,
+          "wilson_95": [
+            0.06771370193505,
+            0.08410086541790657
+          ]
+        }
+      },
+      "st2_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3315,
+            "denominator": 4000,
+            "fraction": 0.82875,
+            "wilson_95": [
+              0.8167612382693415,
+              0.8401079277676798
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 685,
+            "denominator": 4000,
+            "fraction": 0.17125,
+            "wilson_95": [
+              0.15989207223232021,
+              0.18323876173065856
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3315,
+          "denominator": 4000,
+          "fraction": 0.82875,
+          "wilson_95": [
+            0.8167612382693415,
+            0.8401079277676798
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3315,
+          "denominator": 4000,
+          "fraction": 0.82875,
+          "wilson_95": [
+            0.8167612382693415,
+            0.8401079277676798
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 685,
+          "denominator": 4000,
+          "fraction": 0.17125,
+          "wilson_95": [
+            0.15989207223232021,
+            0.18323876173065856
+          ]
+        }
+      },
+      "expanded_mass_support": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3458,
+            "denominator": 4000,
+            "fraction": 0.8645,
+            "wilson_95": [
+              0.8535431509272771,
+              0.8747574149145307
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 542,
+            "denominator": 4000,
+            "fraction": 0.1355,
+            "wilson_95": [
+              0.1252425850854694,
+              0.14645684907272302
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3458,
+          "denominator": 4000,
+          "fraction": 0.8645,
+          "wilson_95": [
+            0.8535431509272771,
+            0.8747574149145307
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3458,
+          "denominator": 4000,
+          "fraction": 0.8645,
+          "wilson_95": [
+            0.8535431509272771,
+            0.8747574149145307
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 542,
+          "denominator": 4000,
+          "fraction": 0.1355,
+          "wilson_95": [
+            0.1252425850854694,
+            0.14645684907272302
+          ]
+        }
+      }
+    },
+    "resolved_two_scale": {
+      "nominal": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 3954,
+            "denominator": 4000,
+            "fraction": 0.9885,
+            "wilson_95": [
+              0.9846956890813237,
+              0.9913669348246381
+            ]
+          },
+          "ST2 fail": {
+            "n": 39,
+            "denominator": 4000,
+            "fraction": 0.00975,
+            "wilson_95": [
+              0.007140657641674861,
+              0.013300076503877448
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 7,
+            "denominator": 4000,
+            "fraction": 0.00175,
+            "wilson_95": [
+              0.0008479657344337417,
+              0.00360811950375379
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 3954,
+          "denominator": 4000,
+          "fraction": 0.9885,
+          "wilson_95": [
+            0.9846956890813237,
+            0.9913669348246381
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 3954,
+          "denominator": 4000,
+          "fraction": 0.9885,
+          "wilson_95": [
+            0.9846956890813237,
+            0.9913669348246381
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3635,
+          "denominator": 4000,
+          "fraction": 0.90875,
+          "wilson_95": [
+            0.8994295502917908,
+            0.9172861048188781
+          ]
+        },
+        "st2_entry": {
+          "n": 46,
+          "denominator": 4000,
+          "fraction": 0.0115,
+          "wilson_95": [
+            0.008633065175361962,
+            0.015304310918676392
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 39,
+          "denominator": 46,
+          "fraction": 0.8478260869565217,
+          "wilson_95": [
+            0.71775860447939,
+            0.9242771777219454
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 7,
+          "denominator": 46,
+          "fraction": 0.15217391304347827,
+          "wilson_95": [
+            0.07572282227805464,
+            0.28224139552060995
+          ]
+        }
+      },
+      "null_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 3954,
+            "denominator": 4000,
+            "fraction": 0.9885,
+            "wilson_95": [
+              0.9846956890813237,
+              0.9913669348246381
+            ]
+          },
+          "ST2 fail": {
+            "n": 39,
+            "denominator": 4000,
+            "fraction": 0.00975,
+            "wilson_95": [
+              0.007140657641674861,
+              0.013300076503877448
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 7,
+            "denominator": 4000,
+            "fraction": 0.00175,
+            "wilson_95": [
+              0.0008479657344337417,
+              0.00360811950375379
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 3954,
+          "denominator": 4000,
+          "fraction": 0.9885,
+          "wilson_95": [
+            0.9846956890813237,
+            0.9913669348246381
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 3954,
+          "denominator": 4000,
+          "fraction": 0.9885,
+          "wilson_95": [
+            0.9846956890813237,
+            0.9913669348246381
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3635,
+          "denominator": 4000,
+          "fraction": 0.90875,
+          "wilson_95": [
+            0.8994295502917908,
+            0.9172861048188781
+          ]
+        },
+        "st2_entry": {
+          "n": 46,
+          "denominator": 4000,
+          "fraction": 0.0115,
+          "wilson_95": [
+            0.008633065175361962,
+            0.015304310918676392
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 39,
+          "denominator": 46,
+          "fraction": 0.8478260869565217,
+          "wilson_95": [
+            0.71775860447939,
+            0.9242771777219454
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 7,
+          "denominator": 46,
+          "fraction": 0.15217391304347827,
+          "wilson_95": [
+            0.07572282227805464,
+            0.28224139552060995
+          ]
+        }
+      },
+      "null_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 3954,
+            "denominator": 4000,
+            "fraction": 0.9885,
+            "wilson_95": [
+              0.9846956890813237,
+              0.9913669348246381
+            ]
+          },
+          "ST2 fail": {
+            "n": 39,
+            "denominator": 4000,
+            "fraction": 0.00975,
+            "wilson_95": [
+              0.007140657641674861,
+              0.013300076503877448
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 7,
+            "denominator": 4000,
+            "fraction": 0.00175,
+            "wilson_95": [
+              0.0008479657344337417,
+              0.00360811950375379
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 3954,
+          "denominator": 4000,
+          "fraction": 0.9885,
+          "wilson_95": [
+            0.9846956890813237,
+            0.9913669348246381
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 3954,
+          "denominator": 4000,
+          "fraction": 0.9885,
+          "wilson_95": [
+            0.9846956890813237,
+            0.9913669348246381
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3635,
+          "denominator": 4000,
+          "fraction": 0.90875,
+          "wilson_95": [
+            0.8994295502917908,
+            0.9172861048188781
+          ]
+        },
+        "st2_entry": {
+          "n": 46,
+          "denominator": 4000,
+          "fraction": 0.0115,
+          "wilson_95": [
+            0.008633065175361962,
+            0.015304310918676392
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 39,
+          "denominator": 46,
+          "fraction": 0.8478260869565217,
+          "wilson_95": [
+            0.71775860447939,
+            0.9242771777219454
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 7,
+          "denominator": 46,
+          "fraction": 0.15217391304347827,
+          "wilson_95": [
+            0.07572282227805464,
+            0.28224139552060995
+          ]
+        }
+      },
+      "st1_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 3985,
+            "denominator": 4000,
+            "fraction": 0.99625,
+            "wilson_95": [
+              0.9938216688057177,
+              0.9977260837292535
+            ]
+          },
+          "ST2 fail": {
+            "n": 13,
+            "denominator": 4000,
+            "fraction": 0.00325,
+            "wilson_95": [
+              0.0019003484269795887,
+              0.0055528584813388385
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 2,
+            "denominator": 4000,
+            "fraction": 0.0005,
+            "wilson_95": [
+              0.00013712874495346754,
+              0.0018213551014583176
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 3985,
+          "denominator": 4000,
+          "fraction": 0.99625,
+          "wilson_95": [
+            0.9938216688057177,
+            0.9977260837292535
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 3985,
+          "denominator": 4000,
+          "fraction": 0.99625,
+          "wilson_95": [
+            0.9938216688057177,
+            0.9977260837292535
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3635,
+          "denominator": 4000,
+          "fraction": 0.90875,
+          "wilson_95": [
+            0.8994295502917908,
+            0.9172861048188781
+          ]
+        },
+        "st2_entry": {
+          "n": 15,
+          "denominator": 4000,
+          "fraction": 0.00375,
+          "wilson_95": [
+            0.002273916270746389,
+            0.006178331194282336
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 13,
+          "denominator": 15,
+          "fraction": 0.8666666666666667,
+          "wilson_95": [
+            0.6211801716767764,
+            0.9626387408969346
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 2,
+          "denominator": 15,
+          "fraction": 0.13333333333333333,
+          "wilson_95": [
+            0.03736125910306537,
+            0.37881982832322364
+          ]
+        }
+      },
+      "st1_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 3850,
+            "denominator": 4000,
+            "fraction": 0.9625,
+            "wilson_95": [
+              0.9561548327638328,
+              0.9679576821931933
+            ]
+          },
+          "ST2 fail": {
+            "n": 130,
+            "denominator": 4000,
+            "fraction": 0.0325,
+            "wilson_95": [
+              0.027437670220603512,
+              0.038459409255267384
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 20,
+            "denominator": 4000,
+            "fraction": 0.005,
+            "wilson_95": [
+              0.0032391284674616835,
+              0.007710720389342788
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 3850,
+          "denominator": 4000,
+          "fraction": 0.9625,
+          "wilson_95": [
+            0.9561548327638328,
+            0.9679576821931933
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 3850,
+          "denominator": 4000,
+          "fraction": 0.9625,
+          "wilson_95": [
+            0.9561548327638328,
+            0.9679576821931933
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3635,
+          "denominator": 4000,
+          "fraction": 0.90875,
+          "wilson_95": [
+            0.8994295502917908,
+            0.9172861048188781
+          ]
+        },
+        "st2_entry": {
+          "n": 150,
+          "denominator": 4000,
+          "fraction": 0.0375,
+          "wilson_95": [
+            0.03204231780680671,
+            0.04384516723616717
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 130,
+          "denominator": 150,
+          "fraction": 0.8666666666666667,
+          "wilson_95": [
+            0.803019825502258,
+            0.9120019952944858
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 20,
+          "denominator": 150,
+          "fraction": 0.13333333333333333,
+          "wilson_95": [
+            0.0879980047055142,
+            0.196980174497742
+          ]
+        }
+      },
+      "st2_lower": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 3954,
+            "denominator": 4000,
+            "fraction": 0.9885,
+            "wilson_95": [
+              0.9846956890813237,
+              0.9913669348246381
+            ]
+          },
+          "ST2 fail": {
+            "n": 43,
+            "denominator": 4000,
+            "fraction": 0.01075,
+            "wilson_95": [
+              0.007990865664179987,
+              0.01444794959479292
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3,
+            "denominator": 4000,
+            "fraction": 0.00075,
+            "wilson_95": [
+              0.0002550997283718515,
+              0.002202904396395083
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 3954,
+          "denominator": 4000,
+          "fraction": 0.9885,
+          "wilson_95": [
+            0.9846956890813237,
+            0.9913669348246381
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 3954,
+          "denominator": 4000,
+          "fraction": 0.9885,
+          "wilson_95": [
+            0.9846956890813237,
+            0.9913669348246381
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3813,
+          "denominator": 4000,
+          "fraction": 0.95325,
+          "wilson_95": [
+            0.9462618003207178,
+            0.9593684643371679
+          ]
+        },
+        "st2_entry": {
+          "n": 46,
+          "denominator": 4000,
+          "fraction": 0.0115,
+          "wilson_95": [
+            0.008633065175361962,
+            0.015304310918676392
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 43,
+          "denominator": 46,
+          "fraction": 0.9347826086956522,
+          "wilson_95": [
+            0.8249725891809578,
+            0.9775721385707115
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3,
+          "denominator": 46,
+          "fraction": 0.06521739130434782,
+          "wilson_95": [
+            0.022427861429288584,
+            0.17502741081904216
+          ]
+        }
+      },
+      "st2_upper": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 3954,
+            "denominator": 4000,
+            "fraction": 0.9885,
+            "wilson_95": [
+              0.9846956890813237,
+              0.9913669348246381
+            ]
+          },
+          "ST2 fail": {
+            "n": 35,
+            "denominator": 4000,
+            "fraction": 0.00875,
+            "wilson_95": [
+              0.00629834514548427,
+              0.012144307886647443
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 11,
+            "denominator": 4000,
+            "fraction": 0.00275,
+            "wilson_95": [
+              0.001536278156460908,
+              0.004917888195147221
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 3954,
+          "denominator": 4000,
+          "fraction": 0.9885,
+          "wilson_95": [
+            0.9846956890813237,
+            0.9913669348246381
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 3954,
+          "denominator": 4000,
+          "fraction": 0.9885,
+          "wilson_95": [
+            0.9846956890813237,
+            0.9913669348246381
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3488,
+          "denominator": 4000,
+          "fraction": 0.872,
+          "wilson_95": [
+            0.8612885417636634,
+            0.8819976324287987
+          ]
+        },
+        "st2_entry": {
+          "n": 46,
+          "denominator": 4000,
+          "fraction": 0.0115,
+          "wilson_95": [
+            0.008633065175361962,
+            0.015304310918676392
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 35,
+          "denominator": 46,
+          "fraction": 0.7608695652173914,
+          "wilson_95": [
+            0.6206486144237798,
+            0.8608782222272219
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 11,
+          "denominator": 46,
+          "fraction": 0.2391304347826087,
+          "wilson_95": [
+            0.13912177777277826,
+            0.3793513855762203
+          ]
+        }
+      },
+      "expanded_mass_support": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 3954,
+            "denominator": 4000,
+            "fraction": 0.9885,
+            "wilson_95": [
+              0.9846956890813237,
+              0.9913669348246381
+            ]
+          },
+          "ST2 fail": {
+            "n": 39,
+            "denominator": 4000,
+            "fraction": 0.00975,
+            "wilson_95": [
+              0.007140657641674861,
+              0.013300076503877448
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 7,
+            "denominator": 4000,
+            "fraction": 0.00175,
+            "wilson_95": [
+              0.0008479657344337417,
+              0.00360811950375379
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 3954,
+          "denominator": 4000,
+          "fraction": 0.9885,
+          "wilson_95": [
+            0.9846956890813237,
+            0.9913669348246381
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 3954,
+          "denominator": 4000,
+          "fraction": 0.9885,
+          "wilson_95": [
+            0.9846956890813237,
+            0.9913669348246381
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3611,
+          "denominator": 4000,
+          "fraction": 0.90275,
+          "wilson_95": [
+            0.893177661169197,
+            0.9115495072609486
+          ]
+        },
+        "st2_entry": {
+          "n": 46,
+          "denominator": 4000,
+          "fraction": 0.0115,
+          "wilson_95": [
+            0.008633065175361962,
+            0.015304310918676392
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 39,
+          "denominator": 46,
+          "fraction": 0.8478260869565217,
+          "wilson_95": [
+            0.71775860447939,
+            0.9242771777219454
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 7,
+          "denominator": 46,
+          "fraction": 0.15217391304347827,
+          "wilson_95": [
+            0.07572282227805464,
+            0.28224139552060995
+          ]
+        }
+      }
+    }
+  },
+  "redshift_smearing_sigma_v_km_s": {
+    "gr": {
+      "0": {
+        "raw": {
+          "null": {
+            "n": 3961,
+            "denominator": 4000,
+            "fraction": 0.99025,
+            "wilson_95": [
+              0.9866999234961226,
+              0.9928593423583251
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 39,
+            "denominator": 4000,
+            "fraction": 0.00975,
+            "wilson_95": [
+              0.007140657641674861,
+              0.013300076503877448
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 39,
+          "denominator": 4000,
+          "fraction": 0.00975,
+          "wilson_95": [
+            0.007140657641674861,
+            0.013300076503877448
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 39,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.08966685370757144
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_entry": {
+          "n": 39,
+          "denominator": 4000,
+          "fraction": 0.00975,
+          "wilson_95": [
+            0.007140657641674861,
+            0.013300076503877448
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 0,
+          "denominator": 39,
+          "fraction": 0.0,
+          "wilson_95": [
+            0.0,
+            0.08966685370757144
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 39,
+          "denominator": 39,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9103331462924287,
+            1.0
+          ]
+        }
+      },
+      "85.7": {
+        "raw": {
+          "null": {
+            "n": 3961,
+            "denominator": 4000,
+            "fraction": 0.99025,
+            "wilson_95": [
+              0.9866999234961226,
+              0.9928593423583251
+            ]
+          },
+          "ST1 fail": {
+            "n": 1,
+            "denominator": 4000,
+            "fraction": 0.00025,
+            "wilson_95": [
+              4.4132501957676274e-05,
+              0.0014148310660989595
+            ]
+          },
+          "ST2 fail": {
+            "n": 1,
+            "denominator": 4000,
+            "fraction": 0.00025,
+            "wilson_95": [
+              4.4132501957676274e-05,
+              0.0014148310660989595
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 37,
+            "denominator": 4000,
+            "fraction": 0.00925,
+            "wilson_95": [
+              0.006718438633114451,
+              0.01272325495572756
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 39,
+          "denominator": 4000,
+          "fraction": 0.00975,
+          "wilson_95": [
+            0.007140657641674861,
+            0.013300076503877448
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 1,
+          "denominator": 4000,
+          "fraction": 0.00025,
+          "wilson_95": [
+            4.4132501957676274e-05,
+            0.0014148310660989595
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 1,
+          "denominator": 39,
+          "fraction": 0.02564102564102564,
+          "wilson_95": [
+            0.004540703100990098,
+            0.13180990169850076
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 1,
+          "denominator": 4000,
+          "fraction": 0.00025,
+          "wilson_95": [
+            4.4132501957676274e-05,
+            0.0014148310660989595
+          ]
+        },
+        "st2_entry": {
+          "n": 38,
+          "denominator": 4000,
+          "fraction": 0.0095,
+          "wilson_95": [
+            0.006929292681302442,
+            0.013011921185894719
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 1,
+          "denominator": 38,
+          "fraction": 0.02631578947368421,
+          "wilson_95": [
+            0.004660587685768783,
+            0.1349487611595213
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 37,
+          "denominator": 38,
+          "fraction": 0.9736842105263158,
+          "wilson_95": [
+            0.8650512388404787,
+            0.9953394123142312
+          ]
+        },
+        "squared_projected_mean_shift": 0.06222384880748359
+      },
+      "200": {
+        "raw": {
+          "null": {
+            "n": 3851,
+            "denominator": 4000,
+            "fraction": 0.96275,
+            "wilson_95": [
+              0.9564234080464616,
+              0.9681886271889196
+            ]
+          },
+          "ST1 fail": {
+            "n": 17,
+            "denominator": 4000,
+            "fraction": 0.00425,
+            "wilson_95": [
+              0.002655247608755385,
+              0.006796040412983639
+            ]
+          },
+          "ST2 fail": {
+            "n": 1,
+            "denominator": 4000,
+            "fraction": 0.00025,
+            "wilson_95": [
+              4.4132501957676274e-05,
+              0.0014148310660989595
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 131,
+            "denominator": 4000,
+            "fraction": 0.03275,
+            "wilson_95": [
+              0.027667144697213195,
+              0.03872945505701286
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 149,
+          "denominator": 4000,
+          "fraction": 0.03725,
+          "wilson_95": [
+            0.03181137281108037,
+            0.043576591953538364
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 17,
+          "denominator": 4000,
+          "fraction": 0.00425,
+          "wilson_95": [
+            0.002655247608755385,
+            0.006796040412983639
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 17,
+          "denominator": 149,
+          "fraction": 0.11409395973154363,
+          "wilson_95": [
+            0.07246585638846925,
+            0.17512049297428978
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 1,
+          "denominator": 4000,
+          "fraction": 0.00025,
+          "wilson_95": [
+            4.4132501957676274e-05,
+            0.0014148310660989595
+          ]
+        },
+        "st2_entry": {
+          "n": 132,
+          "denominator": 4000,
+          "fraction": 0.033,
+          "wilson_95": [
+            0.02789670409220661,
+            0.0389994159403746
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 1,
+          "denominator": 132,
+          "fraction": 0.007575757575757576,
+          "wilson_95": [
+            0.0013385613550180309,
+            0.041663471098156976
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 131,
+          "denominator": 132,
+          "fraction": 0.9924242424242424,
+          "wilson_95": [
+            0.9583365289018432,
+            0.998661438644982
+          ]
+        },
+        "squared_projected_mean_shift": 3.6250108605860847
+      }
+    },
+    "constant_a": {
+      "0": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 187,
+            "denominator": 4000,
+            "fraction": 0.04675,
+            "wilson_95": [
+              0.04063153566283215,
+              0.053738199679282256
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3813,
+            "denominator": 4000,
+            "fraction": 0.95325,
+            "wilson_95": [
+              0.9462618003207178,
+              0.9593684643371679
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 187,
+          "denominator": 4000,
+          "fraction": 0.04675,
+          "wilson_95": [
+            0.04063153566283215,
+            0.053738199679282256
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 187,
+          "denominator": 4000,
+          "fraction": 0.04675,
+          "wilson_95": [
+            0.04063153566283215,
+            0.053738199679282256
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3813,
+          "denominator": 4000,
+          "fraction": 0.95325,
+          "wilson_95": [
+            0.9462618003207178,
+            0.9593684643371679
+          ]
+        }
+      },
+      "85.7": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 183,
+            "denominator": 4000,
+            "fraction": 0.04575,
+            "wilson_95": [
+              0.03969920233662991,
+              0.052672451892063904
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3817,
+            "denominator": 4000,
+            "fraction": 0.95425,
+            "wilson_95": [
+              0.9473275481079362,
+              0.9603007976633702
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 183,
+          "denominator": 4000,
+          "fraction": 0.04575,
+          "wilson_95": [
+            0.03969920233662991,
+            0.052672451892063904
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 183,
+          "denominator": 4000,
+          "fraction": 0.04575,
+          "wilson_95": [
+            0.03969920233662991,
+            0.052672451892063904
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3817,
+          "denominator": 4000,
+          "fraction": 0.95425,
+          "wilson_95": [
+            0.9473275481079362,
+            0.9603007976633702
+          ]
+        },
+        "squared_projected_mean_shift": 0.06099054557632165
+      },
+      "200": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 1,
+            "denominator": 4000,
+            "fraction": 0.00025,
+            "wilson_95": [
+              4.4132501957676274e-05,
+              0.0014148310660989595
+            ]
+          },
+          "ST2 fail": {
+            "n": 141,
+            "denominator": 4000,
+            "fraction": 0.03525,
+            "wilson_95": [
+              0.029966413015046694,
+              0.04142538952273084
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 3858,
+            "denominator": 4000,
+            "fraction": 0.9645,
+            "wilson_95": [
+              0.9583054506586725,
+              0.9698032265251949
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 1,
+          "denominator": 4000,
+          "fraction": 0.00025,
+          "wilson_95": [
+            4.4132501957676274e-05,
+            0.0014148310660989595
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 1,
+          "denominator": 4000,
+          "fraction": 0.00025,
+          "wilson_95": [
+            4.4132501957676274e-05,
+            0.0014148310660989595
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 141,
+          "denominator": 4000,
+          "fraction": 0.03525,
+          "wilson_95": [
+            0.029966413015046694,
+            0.04142538952273084
+          ]
+        },
+        "st2_entry": {
+          "n": 3999,
+          "denominator": 4000,
+          "fraction": 0.99975,
+          "wilson_95": [
+            0.9985851689339011,
+            0.9999558674980424
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 141,
+          "denominator": 3999,
+          "fraction": 0.035258814703675916,
+          "wilson_95": [
+            0.029973925297886613,
+            0.04143571252097117
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 3858,
+          "denominator": 3999,
+          "fraction": 0.9647411852963241,
+          "wilson_95": [
+            0.9585642874790289,
+            0.9700260747021133
+          ]
+        },
+        "squared_projected_mean_shift": 3.5899928716416856
+      }
+    },
+    "drift_1": {
+      "0": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3485,
+            "denominator": 4000,
+            "fraction": 0.87125,
+            "wilson_95": [
+              0.8605134923494372,
+              0.8812741210079594
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 515,
+            "denominator": 4000,
+            "fraction": 0.12875,
+            "wilson_95": [
+              0.11872587899204055,
+              0.1394865076505628
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3485,
+          "denominator": 4000,
+          "fraction": 0.87125,
+          "wilson_95": [
+            0.8605134923494372,
+            0.8812741210079594
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3485,
+          "denominator": 4000,
+          "fraction": 0.87125,
+          "wilson_95": [
+            0.8605134923494372,
+            0.8812741210079594
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 515,
+          "denominator": 4000,
+          "fraction": 0.12875,
+          "wilson_95": [
+            0.11872587899204055,
+            0.1394865076505628
+          ]
+        }
+      },
+      "85.7": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST2 fail": {
+            "n": 3505,
+            "denominator": 4000,
+            "fraction": 0.87625,
+            "wilson_95": [
+              0.8656827149943633,
+              0.8860953039301362
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 495,
+            "denominator": 4000,
+            "fraction": 0.12375,
+            "wilson_95": [
+              0.11390469606986371,
+              0.13431728500563664
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 0,
+          "denominator": 4000,
+          "fraction": 0.0,
+          "wilson_95": [
+            5.421010862427522e-20,
+            0.0009594432897014865
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3505,
+          "denominator": 4000,
+          "fraction": 0.87625,
+          "wilson_95": [
+            0.8656827149943633,
+            0.8860953039301362
+          ]
+        },
+        "st2_entry": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3505,
+          "denominator": 4000,
+          "fraction": 0.87625,
+          "wilson_95": [
+            0.8656827149943633,
+            0.8860953039301362
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 495,
+          "denominator": 4000,
+          "fraction": 0.12375,
+          "wilson_95": [
+            0.11390469606986371,
+            0.13431728500563664
+          ]
+        },
+        "squared_projected_mean_shift": 0.06612508846324663
+      },
+      "200": {
+        "raw": {
+          "null": {
+            "n": 0,
+            "denominator": 4000,
+            "fraction": 0.0,
+            "wilson_95": [
+              5.421010862427522e-20,
+              0.0009594432897014865
+            ]
+          },
+          "ST1 fail": {
+            "n": 5,
+            "denominator": 4000,
+            "fraction": 0.00125,
+            "wilson_95": [
+              0.0005340397696758721,
+              0.002923004911801361
+            ]
+          },
+          "ST2 fail": {
+            "n": 3700,
+            "denominator": 4000,
+            "fraction": 0.925,
+            "wilson_95": [
+              0.9164235372432342,
+              0.9327609359605197
+            ]
+          },
+          "ST1/ST2 pass": {
+            "n": 295,
+            "denominator": 4000,
+            "fraction": 0.07375,
+            "wilson_95": [
+              0.06605293278066376,
+              0.08226499262380674
+            ]
+          }
+        },
+        "nonnull": {
+          "n": 4000,
+          "denominator": 4000,
+          "fraction": 1.0,
+          "wilson_95": [
+            0.9990405567102987,
+            1.0
+          ]
+        },
+        "st1_marginal_crossing": {
+          "n": 5,
+          "denominator": 4000,
+          "fraction": 0.00125,
+          "wilson_95": [
+            0.0005340397696758721,
+            0.002923004911801361
+          ]
+        },
+        "st1_reject_given_nonnull": {
+          "n": 5,
+          "denominator": 4000,
+          "fraction": 0.00125,
+          "wilson_95": [
+            0.0005340397696758721,
+            0.002923004911801361
+          ]
+        },
+        "st2_marginal_crossing": {
+          "n": 3705,
+          "denominator": 4000,
+          "fraction": 0.92625,
+          "wilson_95": [
+            0.9177350073761933,
+            0.9339470672193363
+          ]
+        },
+        "st2_entry": {
+          "n": 3995,
+          "denominator": 4000,
+          "fraction": 0.99875,
+          "wilson_95": [
+            0.9970769950881988,
+            0.9994659602303242
+          ]
+        },
+        "st2_reject_given_entry": {
+          "n": 3700,
+          "denominator": 3995,
+          "fraction": 0.9261576971214017,
+          "wilson_95": [
+            0.9176325493338768,
+            0.933864074141707
+          ]
+        },
+        "st2_nonrejection_given_entry": {
+          "n": 295,
+          "denominator": 3995,
+          "fraction": 0.07384230287859825,
+          "wilson_95": [
+            0.06613592585829282,
+            0.08236745066612307
+          ]
+        },
+        "squared_projected_mean_shift": 3.884396447227656
+      }
+    }
+  },
+  "noiseless_drift_geometry": {
+    "drift_0.5": {
+      "q_h_mpc": [
+        0.020207259421636897,
+        0.02656313234541439,
+        0.037123106012293745,
+        0.057154760664940824
+      ],
+      "nominal": {
+        "constant_distance_squared": 15.015970965782317,
+        "one_turnover_distance_squared": 0.0,
+        "nearest_constant_beta": 0.08,
+        "nearest_constant_mass_h_mpc": 0.055
+      },
+      "expanded": {
+        "constant_distance_squared": 15.015970965782317,
+        "one_turnover_distance_squared": 0.0,
+        "nearest_constant_beta": 0.08,
+        "nearest_constant_mass_h_mpc": 0.055
+      }
+    },
+    "drift_1": {
+      "q_h_mpc": [
+        0.011666666666666665,
+        0.016800000000000002,
+        0.02625,
+        0.04666666666666666
+      ],
+      "nominal": {
+        "constant_distance_squared": 13.478288869213088,
+        "one_turnover_distance_squared": 0.0,
+        "nearest_constant_beta": 0.08,
+        "nearest_constant_mass_h_mpc": 0.04
+      },
+      "expanded": {
+        "constant_distance_squared": 13.478288869213088,
+        "one_turnover_distance_squared": 0.0,
+        "nearest_constant_beta": 0.08,
+        "nearest_constant_mass_h_mpc": 0.04
+      }
+    }
+  },
+  "paired_drift_change_in_raw_ST2_exit_1_minus_0.5": {
+    "entry_at_0.5": 4000,
+    "entry_at_1": 4000,
+    "reject_0.5_only": 417,
+    "reject_1_only": 269,
+    "fraction_difference": -0.037,
+    "normal_95": [
+      -0.04978415703391376,
+      -0.024215842966086233
+    ]
+  },
+  "frozen_benchmark_sha256": "8dd1363cc468d6198208c58e4bbf0d6f7c19d976087b708e7cf5c8459da7d9e9",
+  "frozen_results_sha256": "0e0569687e1c91ffbc838abba2ff968e03ab4bebb2f7860500be024e3b4483b7"
+}

@@ -104,7 +104,12 @@ def diagnostics(results, output, it):
     )
     axs[2].plot(range(len(banks)), [r["positive_two_scale_ST1_fail"] for r in banks],
                 "o-", color="#bd1e24")
-    axs[2].set_xticks(range(len(banks)), [f"{r['n_causal']}/{r['n_k_basis']}" for r in banks])
+    # Two settings share 128/6; the repeated one uses a different causal-history seed.
+    first_seed = banks[0]["seed"]
+    redraw = "\n(nuova estr.)" if it else "\n(new draw)"
+    axs[2].set_xticks(range(len(banks)), [
+        f"{r['n_causal']}/{r['n_k_basis']}" + (redraw if r["seed"] != first_seed else "")
+        for r in banks])
     axs[2].set(
         xlabel=r"Storie causali / base $\ln k$" if it else r"Causal histories / $\ln k$ basis",
         ylabel="Frazione di rigetto ST1" if it else "ST1 rejection fraction",

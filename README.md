@@ -10,8 +10,8 @@ Boltzmann-code validation, or a nonlinear large-scale-structure pipeline.
 ## Revision reproducibility
 
 [Release v1.0.6](https://github.com/castronuovo/scale-dependent-growth-tests/releases/tag/v1.0.6)
-includes `revision_reproducibility.zip`, the same bundle supplied with the
-revised manuscript. It contains the frozen original benchmark
+includes `revision_reproducibility.zip`, the bundle for the earlier revision
+checks. It contains the frozen original benchmark
 (`reproducibility.zip`) and the scripts and machine-readable results for the
 additional synthetic checks. These cover independent noise draws and held-out
 constant-scale injections, sensitivity to thresholds and fitting-bank support,
@@ -36,6 +36,28 @@ MPLBACKEND=Agg python3 stress_test/render_revision_figures.py
 See [the revision instructions](stress_test/README.md) for the interpretation
 of the stored results. Release v1.0.5 remains the reference for the original
 benchmark documented below.
+
+## Selective validation for v1.0.7
+
+The new validation measures conditional false rejection when only a subset
+of constant-scale mocks enters ST2. It also calibrates and evaluates
+selective mass intervals after the final ST2 pass on the nominal finite
+mass–amplitude grid. The bundle prepared for GitHub release v1.0.7 is
+`st2_selective_validation.zip`, which accompanies the major revision.
+It includes the frozen benchmark, the earlier revision checks, and the
+scripts and machine-readable results for both new studies. See the
+[v1.0.7 release notes](RELEASE_NOTES_v1.0.7.md) for the archive checksum.
+
+Install the pinned benchmark dependencies and SciPy for the additional runner:
+
+```bash
+python3 -m pip install -r requirements.txt scipy==1.13.1
+MPLBACKEND=Agg OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \
+  python3 stress_test/run_selective_validation.py
+```
+
+See [the validation instructions](stress_test/README.md#partial-st2-entry-and-selective-mass-intervals)
+for the reporting events, denominators, and scope of the mass calibration.
 
 ## Environment
 

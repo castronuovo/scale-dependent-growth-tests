@@ -36,3 +36,41 @@ directories and run:
 ```bash
 MPLBACKEND=Agg python3 stress_test/render_revision_figures.py
 ```
+
+## Partial ST2 entry and selective mass intervals
+
+The supplementary archive `st2_selective_validation.zip` contains the
+additional runner and results. Use Python 3.9.6, NumPy 2.0.2,
+SciPy 1.13.1 and Matplotlib 3.9.4 to reproduce the numerical environment.
+From the extracted archive's root, run:
+
+```bash
+MPLBACKEND=Agg OPENBLAS_NUM_THREADS=1 VECLIB_MAXIMUM_THREADS=1 \
+  python3 stress_test/run_selective_validation.py
+```
+
+The runner uses the archived nominal cuts. It selects partial-entry
+constant-scale pairs in an independent pilot based on the first two
+decisions and evaluates each pair with 20,000 new Gaussian draws. ST2
+false rejection is counted among non-null, ST1-compatible draws. The
+JSON records stage counts and simultaneous 95% Clopper–Pearson intervals
+over the 16 tested pairs for the conditional false-rejection rate.
+
+For mass inference, the report event also requires ST2 non-rejection.
+Calibration uses the first 1,999 reports per truth on the nine-mass,
+eleven-amplitude grid. For each mass, it takes the maximum over amplitude
+of the cell-specific upper order statistic. The reported interval
+spans the mass nodes retained by the profiled residual test. The JSON
+contains the reference thresholds and a validation with the first
+4,000 reports per grid truth from independent streams. Coverage
+intervals quantify validation Monte Carlo uncertainty conditional on
+the realized reference thresholds. The finite-grid calibration applies
+to the exact recorded truth cells. Off-grid inclusion rates in the
+boundary sample are separate diagnostics, conditional on final reports.
+
+For one mock with the archived forward model, import
+`selective_mass_interval` from `run_selective_validation.py`. Pass the
+nominal `Benchmark` instance, its raw mock vector, and the
+`thresholds` and `mass` entries from
+`selective_validation_results.json`. The function returns closed
+endpoints in h Mpc\(^{-1}\) on a raw final pass and `None` otherwise.
